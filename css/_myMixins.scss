@@ -1,0 +1,35 @@
+@mixin hovAct() {
+    &:hover {
+      fill: $colBlue;
+      color: $colBlue;
+    }
+  
+    &:active {
+      fill: $colAct;
+      color: $colAct;
+    }
+  }
+  
+  @mixin flexCent {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+  }
+  
+  @mixin placeholder {
+    &::-webkit-input-placeholder {
+      @content;
+    }
+  
+    &:-moz-placeholder {
+      @content;
+    }
+  
+    &::-moz-placeholder {
+      @content;
+    }
+  
+    &:-ms-input-placeholder {
+      @content;
+    }
+  }

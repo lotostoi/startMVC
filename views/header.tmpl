@@ -1,0 +1,36 @@
+        <header class="header">
+            <h1 class="header__h1"><a href="index.php?page=aboutshop" class="header__a">E-SHOP </a></h1>
+            <ul class="header__ul">
+                <li class="header__li"><a href="index.php?page=aboutshop" class="header__a">Главная</a></li>
+                <li class="header__li"><a href="index.php?page=products" class="header__a">Товары</a></li>
+                <li class="header__li"><a href="index.php?page=reviews" class="header__a">Отзывы</a></li>
+         <!--        <?php
+                if ($_SESSION['status_user'] == 'Admin') {
+                
+                    <li class="header__li"><a href="index.php?page=editDB" class="header__a">Админка</a></li>
+                <?php
+                } -->
+
+               
+            </ul>
+    <!--          <a href="index.php?page=cart" class="CartSvg">
+                <svg width="19" height="17">
+                    <path d="M18.000,4.052 L17.000,7.040 C16.630,7.878 16.105,9.032 15.000,9.032 L5.360,9.032 L5.478,10.028 L18.000,10.028 L17.000,12.019 L4.352,12.019 L3.709,12.095 L2.522,2.061 L1.000,2.061 C0.448,2.061 -0.000,1.615 -0.000,1.066 C-0.000,0.515 0.352,0.008 0.905,0.008 L4.291,-0.006 L4.545,2.145 C4.670,2.096 4.812,2.061 5.000,2.061 L17.000,2.061 C18.105,2.061 18.000,2.953 18.000,4.052 ZM6.000,13.015 C7.105,13.015 8.000,13.906 8.000,15.007 C8.000,16.107 7.105,16.998 6.000,16.998 C4.895,16.998 4.000,16.107 4.000,15.007 C4.000,13.906 4.895,13.015 6.000,13.015 ZM14.000,13.015 C15.105,13.015 16.000,13.906 16.000,15.007 C16.000,16.107 15.105,16.998 14.000,16.998 C12.896,16.998 12.000,16.107 12.000,15.007 C12.000,13.906 12.896,13.015 14.000,13.015 Z" />
+                </svg>
+                <span class="spanCart">Cart</span>
+                <span class="countCart"> <?= $all['quant'] ? $all['quant'] : 0 ?> </span>
+            </a>  -->
+            <div>
+                {% if name_user  %}
+                    <form class="contEntrense" method="POST">
+                        <a href="index.php?page=personalarea" class="contEntrense__login"> {{ name_user }} </a>
+                        <button type="submit" name="exit" class="contEntrense__action"> выход </button>
+                    </form>
+               {% else %}
+                    <div class="contEntrense">
+                        <a href="index.php?page=authorization" class="contEntrense__login"> регистрация</a>
+                        <a href="index.php?page=entry" class="contEntrense__action"> войти </a>
+                    </div>
+               {% endif %}
+            </div>
+        </header>

@@ -1,0 +1,124 @@
+.order {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    &__text {
+        display: flex;
+        min-width: 200px;
+        min-height: 30px;
+        border-radius: 15px;
+        border: 2px solid #2754eb;
+        font-size: 11px;
+        font-family: $mr;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        background-color: #2754eb;
+        outline: none;
+        color: #fff;
+        // margin-left: auto;
+
+        &:hover {
+            background-color: #223369;
+            border: 2px solid #223369;
+        }
+
+        &:active {
+            background-color: #030c29;
+            border: 2px solid #030c29;
+        }
+    }
+
+    &__h3 {
+        margin: 20px;
+        font-size: 20px;
+        display: flex;
+        color: red;
+
+    }
+}
+
+.makeOrder {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    margin: 10px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    box-sizing: content-box;
+
+    &__login {
+        display: flex;
+        width: 100%;
+        margin: 10px 0;
+        align-items: center;
+        margin-left: 10px;
+        flex-wrap: wrap;
+
+    }
+
+    &__login>input {
+        margin-right: 10px;
+        margin-left: auto;
+        width: 200px;
+        height: 0;
+        min-height: 30px;
+        outline: none;
+        border-radius: 5px;
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+        margin-left: 10px;
+    }
+
+    &__text>textarea {
+        padding: 10px;
+        width: 90%;
+        margin: 20px auto;
+        height: 0;
+        min-height: 100px;
+        outline: none;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    &__btn {
+        margin: 0 auto;
+        width: 160px;
+        height: 0;
+        min-height: 30px;
+        outline: none;
+        border-radius: 5px;
+        background-color: rgb(53, 52, 52);
+        color: white;
+    }
+
+    &__errText {
+        display: flex;
+        width: 100%;
+        margin-top: 5px;
+        padding: 10px;
+        border: 1px solid red;
+        border-radius: 10px;
+        background-color: rgb(236, 181, 181);
+        justify-content: center;
+    }
+
+    &__okText {
+        display: flex;
+        width: 100%;
+        margin-top: 5px;
+        padding: 10px;
+        border: 1px solid rgb(55, 247, 49);
+        border-radius: 10px;
+        background-color: rgb(43, 226, 156);
+        justify-content: center;
+    }
+
+}

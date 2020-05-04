@@ -1,0 +1,56 @@
+.footer {
+    width: 100%;
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    padding: 20px 50px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &__a {
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        &:hover {
+            color: $colgre;
+        }
+        &:active {
+            color: red;
+        }
+    }
+
+    &__socsety {
+        width: 120px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__icon {
+        color: #fff;
+        font-size: 18px;
+
+        &:hover {
+            color: $colgre;
+        }
+
+        &:active {
+            color: red;
+        }
+    }
+
+    @include to(850px) {
+        &__ul {
+            display: none;
+        }
+    }
+}
+
+@include to(850px) {
+    .footer {
+        padding: 0 20px;
+    }
+}
+
+

@@ -1,0 +1,33 @@
+<div class="contMain">
+    <form class="entrance" method="POST">
+        <label class="entrance__login">Логин: <input type="text" name="login" value="{{data.login}}"></label>
+        <label class="entrance__login">Ваше имя: <input type="text" name="name" value="{{data.name}}"></label>
+        <label class="entrance__login">Пароль: <input type="password" name="password_1" value="{{data.pas_1}}"></label>
+        <label class="entrance__login">Подтвердите пароль: <input type="password" name="password_2" value="{{data.pas_2}}"></label>
+        <label class="entrance__login">E-mail: <input type="email" name="email" value="{{data.email}}"></label>
+        <label class="entrance__login">Телефон: <input type="phone" name="phone" value="{{data.phone}}"></label>
+        <input type="submit" name="reg" value="Регистрация" class="entrance__btn">
+        
+        {% if status == 'good' %}
+        <div class='entrance__okText'>
+            <p class='entrance__err'> Вы успешно зарегестрированны!</p>
+        </div>
+        {% elseif status == 'pass' %}
+        <div class='entrance__errText'>
+            <p class='entrance__err'> Пароли не совпадают</p>
+        </div>
+        {% elseif status == 'email' %}
+        <div class='entrance__errText'>
+            <p class='entrance__err'> Данный e-mail уже ипользуется</p>
+        </div>
+        {% elseif status == 'login' %}
+        <div class='entrance__errText'>
+            <p class='entrance__err'> Логин занят!</p>
+        </div>
+        {% elseif status == 'empty_fields' %}
+        <div class='entrance__errText'>
+            <p class='entrance__err'> Все поля должны быть заполнены!</p>
+        </div>
+        {% endif  %}
+    </form>
+</div>

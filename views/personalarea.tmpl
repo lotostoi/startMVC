@@ -1,0 +1,26 @@
+<div class="contMain">
+
+    <form class="persArea" method="POST">
+
+        <h3 class="persArea__h3"> Личный кабинет </h3>
+        <label class="persArea__label">
+            <span class="persArea__title">Логин:</span>
+            <span class="persArea__value"> {{ data.login_pa }} </span>
+        </label>
+        <label class="persArea__label">
+            <span class="persArea__title">Имя:</span>
+            <span class="persArea__value">{{ data.name_pa }}</span>
+        </label>
+        <label class="persArea__label">
+            <span class="persArea__title">E-mail:</span>
+            <span class="persArea__value">{{ data.email_pa }} </span>
+        </label>
+        <label class="persArea__label">
+            <span class="persArea__title">Телефон:</span>
+            <span class="persArea__value">{{ data.phone_pa }} </span>
+        </label>
+        <button type="submit" class="persArea__btnEdit" name="persAreaEdit"> Изменить </button>
+
+    </form>
+
+</div>

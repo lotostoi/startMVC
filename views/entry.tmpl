@@ -1,0 +1,29 @@
+<div class="contMain">
+    <form class="entrance" method="POST">
+        {% if status == 'change' %}
+        <div class='entrance__okText'>
+            <p class='entrance__err'> Личные данные успешно изменены, для продолжения работы введите логин и пароль.
+            </p>
+        </div>
+        {% elseif status == 'entry_good' %}
+        <div class='entrance__okText'>
+            <p class='entrance__err'> Вы вошли!</p>
+        </div>
+        {% elseif status == 'wrongLoginOrPassword' %}
+        <div class='entrance__errText'>
+            <p class='entrance__err'> Неверный логин или пароль! </p>
+        </div>
+        {% endif %}
+
+        <label class="entrance__login">Логин <input type="text" name="login_entry" value=""></label>
+        <label class="entrance__login">Пароль <input type="password" name="password_entry" value=""></label>
+
+        {% if nameButton == 'exit' %}
+        <input type="submit" name="exit" value="Выйти" class="entrance__btn">
+        {% elseif nameButton == 'entry' %}
+        <input type="submit" name="entry" value="Войти" class="entrance__btn">
+        {% endif %}
+
+    </form>
+
+</div>
