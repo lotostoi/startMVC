@@ -12,6 +12,6 @@ $page = $_GET['page'];
 
 if ($page == 'aboutshop') {
     new AboutShop();
-} else if ($page == 'authorization' || $page == 'entry' || $page == 'personalarea') {
-    new Authorization();
+} else if ($page == 'registration' || $page == 'entry' || $page == 'personalarea') {
+    new Auth();
 } 
