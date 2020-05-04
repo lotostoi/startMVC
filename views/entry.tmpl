@@ -15,15 +15,19 @@
         </div>
         {% endif %}
 
+        {% if status != 'entry_good'  %}
+
         <label class="entrance__login">Логин <input type="text" name="login_entry" value=""></label>
-        <label class="entrance__login">Пароль <input type="password" name="password_entry" value=""></label>
+        <label class="entrance__login">Пароль <input type="password" name="password_entry" value=""></label>.
+        
 
         {% if nameButton == 'exit' %}
         <input type="submit" name="exit" value="Выйти" class="entrance__btn">
         {% elseif nameButton == 'entry' %}
         <input type="submit" name="entry" value="Войти" class="entrance__btn">
         {% endif %}
-
+        {% endif %}
+       
     </form>
 
 </div>
