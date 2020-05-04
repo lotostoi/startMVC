@@ -68,15 +68,15 @@ class Auth extends CreatePage
         switch ($_GET['page']) {
             case 'registration':
                 $this->template = 'authorization.tmpl';
-                $this->title = 'форма регистрации';
+                $this->title = 'E-shop: форма регистрации';
                 break;
             case 'entry':
                 $this->template = 'entry.tmpl';
-                $this->title = 'авторизация';
+                $this->title = 'E-shop: авторизация';
                 break;
             case 'personalarea':
                 $this->template = 'personalarea.tmpl';
-                $this->title = 'личный кабинет';
+                $this->title = 'E-shop: личный кабинет';
                 break;
         }
 
