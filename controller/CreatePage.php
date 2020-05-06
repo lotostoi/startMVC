@@ -1,8 +1,9 @@
 <?php
+namespace controller;
 
-include "./controller/Controller.class.php";
+require_once "Controller.class.php";
 
-class CreatePage extends controller\Controller
+class CreatePage extends Controller
 {
     private $title;
     private $header;
@@ -11,7 +12,9 @@ class CreatePage extends controller\Controller
 
     public function __construct()
     {
+        
         $this->getPageName();
+
     }
 
     public function p_shop($title, $header, $content)

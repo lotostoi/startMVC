@@ -1,6 +1,9 @@
 <?php
-include_once 'models/db_config.php';
-include_once 'models/PDO.php';
+namespace models;
+
+include_once 'db_config.php';
+include_once 'DB.php';
+
 
 class M_start_authorization
 {
@@ -12,6 +15,8 @@ class M_start_authorization
    public $user_s_login;
    public $user_s_email;
    public $user_s_phone;
+
+   public $db;
 
     public function __construct()
     { // старт или продолжение сессии
@@ -35,10 +40,11 @@ class M_start_authorization
         // должна работать на всех страницах,
         // поскольку данная кнопка есть в шапке сайта, если пользователь авторизован
         $this->exit_personal_area();
-    
-        $this->db = new DB(SERVNAME, DBNAME, USERNAME, PASSWORD);
-        $this->query = $this->db->dbh;
 
+        \models\DB::instance();
+        $this->db = \models\DB::$db;
+
+         
     }
     private function startSession()
     {
@@ -61,9 +67,12 @@ class M_start_authorization
     {
         if (isset($_POST[$this->exit])) {
             session_destroy();
-            header("Location: index.php?page=entry");
+            header("Location: index.php?page=auth/entry");
         }
 
     }
 
 }
+
+
+

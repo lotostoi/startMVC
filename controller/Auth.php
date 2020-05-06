@@ -1,40 +1,35 @@
 <?php
-require_once "controller/CreatePage.php";
-
-
-spl_autoload_register(function ($class_name) {
-    include 'models/' . $class_name . '.php';
-});
+namespace controller;
 
 class Auth extends CreatePage
 {
     public $template;
 
-    public function __construct()
+    public function __construct($method)
     {
         parent::__construct();
 
-        switch ($this->name_page) {
+        switch ($method) {
 
             case 'registration':
-                $m_auth = new M_registration();
+                $m_auth = new \models\M_registration();
                 break;
 
             case 'entry':
-                $m_auth = new M_entry();
+                $m_auth = new \models\M_entry();
                 break;
 
             case 'personalarea':
-                $m_auth = new M_personalarea();
+                $m_auth = new \models\M_personalarea();
                 break;
 
             default:
-                $m_auth = new M_start_authorization();
+                $m_auth = new \models\M_start_authorization();
 
         }
 
         // определяем тип  шаблона и title
-        $this->getTemplate();
+        $this->getTemplate($method);
 
         // готовим данные для шаблона шапки сайта
         $header = [
@@ -63,19 +58,19 @@ class Auth extends CreatePage
 
     }
 
-    private function getTemplate()
+    private function getTemplate($method)
     {
-        switch ($_GET['page']) {
+        switch ($method) {
             case 'registration':
-                $this->template = 'authorization.tmpl';
+                $this->template = $method .'.tmpl';
                 $this->title = 'E-shop: форма регистрации';
                 break;
             case 'entry':
-                $this->template = 'entry.tmpl';
+                $this->template = $method .'.tmpl';
                 $this->title = 'E-shop: авторизация';
                 break;
             case 'personalarea':
-                $this->template = 'personalarea.tmpl';
+                $this->template = $method .'.tmpl';
                 $this->title = 'E-shop: личный кабинет';
                 break;
         }
