@@ -51,7 +51,7 @@ class M_registration extends M_start
                            ':s'=> $this->userData['status'],
                            );
 
-                            $this->db->insert('INSERT INTO USERS (login,name,password,email,phone,status)VALUES(:l,:n,:p1,:e,:p,:s)', $arr);
+                            $this->db->insert("INSERT INTO " .USERS. " (login,name,password,email,phone,status)VALUES(:l,:n,:p1,:e,:p,:s)", $arr);
 
                             $this->userData = [
                                 'login' => '',

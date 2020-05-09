@@ -104,7 +104,7 @@ class DB
       $allQuant = 0; 
       $allSum = 0; 
 
-      $arr = self::select('SELECT * FROM CART WHERE id_user = :id_user', [':id_user' => $id_user]);
+      $arr = self::select("SELECT * FROM " .CART." WHERE id_user = :id_user", [':id_user' => $id_user]);
      
 
         foreach ($arr as $key => $val) {
@@ -115,7 +115,7 @@ class DB
             $id = $val['id_product'];    
 
         
-            $price_cart = self::select('SELECT `price` FROM COTALOG WHERE id=:id',[':id'=>$id])[0]['price'];
+            $price_cart = self::select("SELECT `price` FROM " .COTALOG. " WHERE id=:id",[':id'=>$id])[0]['price'];
            
             $allQuant += $quant;
             $allSum += $quant * $price_cart; 

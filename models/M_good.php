@@ -14,7 +14,7 @@ class M_good extends M_start
 
     public function getDataGood($id_good)
     {
-        $arr = $this->db->select('SELECT * FROM COTALOG WHERE id=:id', [':id' => $id_good]);
+        $arr = $this->db->select("SELECT * FROM" .COTALOG. "WHERE id=:id", [':id' => $id_good]);
      
         $this->dataGood = [
             // данные о товаре

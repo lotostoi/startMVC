@@ -98,7 +98,7 @@ class S_cart_for_no_auth_user
 
             foreach ($_SESSION['cart'] as $key => $val) {
 
-                $price = $this->db->select('SELECT price FROM COTALOG WHERE id=:id', [':id' => $val['id_product']])[0]['price'];
+                $price = $this->db->select("SELECT price FROM " .COTALOG. " WHERE id=:id", [':id' => $val['id_product']])[0]['price'];
 
                 $allQuant += $val['quantity'];
                 $allSum += $val['quantity'] * $price;
@@ -114,7 +114,7 @@ class S_cart_for_no_auth_user
     }
     private function getDataGood($id)
     {
-        return $this->db->select('SELECT * FROM COTALOG WHERE id=:id', [':id' => $id])[0];
+        return $this->db->select("SELECT * FROM " .COTALOG. " WHERE id=:id", [':id' => $id])[0];
     }
 
     private function findIidexValInArr($value, $namefilde, $arr)

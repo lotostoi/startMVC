@@ -108,7 +108,7 @@ class DB
         $allQuant = 0;
         $allSum = 0;
 
-        $arr = self::select('SELECT * FROM CART WHERE id_user = :id_user', [':id_user' => $id_user]);
+        $arr = self::select("SELECT * FROM CART WHERE id_user = :id_user", [':id_user' => $id_user]);
 
         foreach ($arr as $key => $val) {
 

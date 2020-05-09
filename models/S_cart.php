@@ -19,7 +19,7 @@ class S_cart
 
         } else {
            
-           // echo 'test';
+         
             new \models\S_cart_for_auth_user();
 
         }

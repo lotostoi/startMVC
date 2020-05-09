@@ -53,10 +53,7 @@ class M_entry extends M_start
                     $this->name_button = 'exit';
                     $this->body_message = 'entry_good';
 
-                  //  $this->db->delete('DELETE FROM session');
-
-                    $this->db->insert('INSERT INTO session (id_user)VALUES(:iu)',[':iu'=> $_SESSION['id_user_entry']]);
-
+                 
                 } else {
                     $this->name_button = 'entry';
                     $this->body_message = 'wrongLoginOrPassword';

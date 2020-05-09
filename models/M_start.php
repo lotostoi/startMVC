@@ -89,10 +89,7 @@ class M_start
             echo $max_id_user;
 
             $_SESSION['id_user_entry'] = $max_id_user + 1;
-           
-            $this->db->delete('DELETE FROM session');
-
-            $this->db->insert('INSERT INTO session (id_user)VALUES(:iu)', [':iu' => $_SESSION['id_user_entry']]);
+            
         }
 
     }

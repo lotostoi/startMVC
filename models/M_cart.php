@@ -38,9 +38,9 @@ class M_cart extends M_start
     {
         $goods_in_cart = [];
         $arrGood = [];
-        $arr = $this->goods_in_cart = $this->db->select('SELECT * FROM CART WHERE id_user=:id', [':id' => $id_user]);
+        $arr = $this->goods_in_cart = $this->db->select("SELECT * FROM " .CART. " WHERE id_user=:id", [':id' => $id_user]);
         foreach ($arr as $kay => $val) {
-            $good_in_cotalog = $this->db->select('SELECT * FROM COTALOG WHERE id=:id', [':id' => $val['id_product']])[0];
+            $good_in_cotalog = $this->db->select("SELECT * FROM " .COTALOG. " WHERE id=:id", [':id' => $val['id_product']])[0];
             $good_in_cart = array(
                 'id_product' => $good_in_cotalog['id'],
                 'link' => $good_in_cotalog['linkImg'],

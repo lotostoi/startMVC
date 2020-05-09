@@ -12,7 +12,7 @@ class Router
     {
         error_reporting(0);
 
-        $this->page = $_GET['page'] ? $_GET['page'] : "\controller\\" . 'AboutShop';
+        $this->page = $_GET['page'] ? $_GET['page'] : "\controller\\" . 'Aboutshop';
 
         $this->getClassName();
 
@@ -25,7 +25,7 @@ class Router
         if ($_GET['page']) {
 
             $arr = explode('/', $_GET['page']);
-            $class_p = "\controller\\" . $arr[0];
+            $class_p = "\controller\\" . ucfirst($arr[0]);
 
             if ($arr[1]) {
                 $p = new $class_p($arr[1]);
