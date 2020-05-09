@@ -1,7 +1,7 @@
 <?php
 namespace models;
 
-class S_server
+class M_server
 {
 
     public function __construct()
