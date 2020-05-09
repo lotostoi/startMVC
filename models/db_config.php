@@ -10,4 +10,4 @@ const COTALOG = 'cotalog';
 const NEW_USER = 'new_user';
 const ORDERS = 'orders';
 const DB_CHAR = 'utf8';
-
+const SESSION = 'session';

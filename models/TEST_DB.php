@@ -1,5 +1,8 @@
 <?php
-namespace models;
+//namespace models;
+
+include_once "./../models/db_config.php";
+//include "./../models/DB.php";
 
 class DB
 {
@@ -7,7 +10,7 @@ class DB
     protected static $instance = null;
 
     public static $db = null;
-   
+
     private function __construct()
     {
 
@@ -36,6 +39,7 @@ class DB
 
     private static function sql($sql, $args = [])
     {
+        //  echo "<pre>" . $sql . "</pre>";
         $stmt = self::instance()->prepare($sql);
         $stmt->execute($args);
         return $stmt;
@@ -73,7 +77,7 @@ class DB
     public function getArr($nameTable)
     {
         $arr = self::select("SELECT * FROM $nameTable", []);
-      
+
         return $arr;
     }
 // ищем совпадение значение $value с полем столбца $column
@@ -98,29 +102,27 @@ class DB
         }
         return false;
     }
-    // общая сумма корзины и общее количество товров в корзине 
+    // общая сумма корзины и общее количество товров в корзине
     public function all_sum_cart($id_user)
     {
-      $allQuant = 0; 
-      $allSum = 0; 
+        $allQuant = 0;
+        $allSum = 0;
 
-      $arr = self::select('SELECT * FROM CART WHERE id_user = :id_user', [':id_user' => $id_user]);
-     
+        $arr = self::select('SELECT * FROM CART WHERE id_user = :id_user', [':id_user' => $id_user]);
 
         foreach ($arr as $key => $val) {
-  
 
             $quant = $val['quantity'];
-          
-            $id = $val['id_product'];    
 
-        
-            $price_cart = self::select('SELECT `price` FROM COTALOG WHERE id=:id',[':id'=>$id])[0]['price'];
-           
+            $id = $val['id_product'];
+
+            $price_cart = self::select('SELECT `price` FROM COTALOG WHERE id=:id', [':id' => $id])[0]['price'];
+
             $allQuant += $quant;
-            $allSum += $quant * $price_cart; 
+            $allSum += $quant * $price_cart;
         }
         return ['sum' => $allSum, "quant" => $allQuant];
     }
 
 }
+

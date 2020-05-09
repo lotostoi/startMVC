@@ -1,7 +1,7 @@
 <?php
 namespace models;
 
-class M_entry extends M_start_authorization
+class M_entry extends M_start
 {
     // переманная определяющая текст сообщения о результате регистрации
     public $body_message;
@@ -52,6 +52,10 @@ class M_entry extends M_start_authorization
                     $_SESSION['phone_entry'] =$this->db->getArr(USERS)[$index - 1]['phone']; 
                     $this->name_button = 'exit';
                     $this->body_message = 'entry_good';
+
+                  //  $this->db->delete('DELETE FROM session');
+
+                    $this->db->insert('INSERT INTO session (id_user)VALUES(:iu)',[':iu'=> $_SESSION['id_user_entry']]);
 
                 } else {
                     $this->name_button = 'entry';

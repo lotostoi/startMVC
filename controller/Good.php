@@ -1,13 +1,13 @@
 <?php
 namespace controller;
 
-class Cotalog extends CreatePage
+class Good extends CreatePage
 {
 
-    public function __construct()
+    public function __construct($id_good)
     { // создаем объект класса авторизация
 
-        $m_auth = new \models\M_start();
+        $m_auth = new \models\M_good($id_good);
 
         // готовим данные для шаблона шапки сайта
         $header = [
@@ -17,13 +17,13 @@ class Cotalog extends CreatePage
 
         // готовим данные для шаблона контента сайта
         $content = [
-            'tmpl' => 'cotalog.tmpl',
-            'data' => [],
+            'tmpl' => 'good.tmpl',
+            'data' =>['data' => $m_auth->dataGood],
         ];
-
+      
         // вызываем метод формирования данных для шабловнов
 
-        parent::p_shop('E-Shop: каталог товаров', $header, $content);
+        parent::p_shop('O магазине', $header, $content);
 
         // отображаем главный шаблон
         parent::render();

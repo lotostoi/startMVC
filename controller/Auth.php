@@ -24,7 +24,7 @@ class Auth extends CreatePage
                 break;
 
             default:
-                $m_auth = new \models\M_start_authorization();
+                $m_auth = new \models\M_start;
 
         }
 
@@ -34,7 +34,7 @@ class Auth extends CreatePage
         // готовим данные для шаблона шапки сайта
         $header = [
             'tmpl' => 'header.tmpl',
-            'data' => ['name_user' => $_SESSION['user_entry']],
+            'data' => ['name_user' => $_SESSION['user_entry'], 'allquantity' => $m_auth->quantity],
         ];
 
         // готовим данные для шаблона контента сайта
@@ -62,15 +62,15 @@ class Auth extends CreatePage
     {
         switch ($method) {
             case 'registration':
-                $this->template = $method .'.tmpl';
+                $this->template = $method . '.tmpl';
                 $this->title = 'E-shop: форма регистрации';
                 break;
             case 'entry':
-                $this->template = $method .'.tmpl';
+                $this->template = $method . '.tmpl';
                 $this->title = 'E-shop: авторизация';
                 break;
             case 'personalarea':
-                $this->template = $method .'.tmpl';
+                $this->template = $method . '.tmpl';
                 $this->title = 'E-shop: личный кабинет';
                 break;
         }

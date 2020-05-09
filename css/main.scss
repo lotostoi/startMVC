@@ -51,20 +51,21 @@ $colActive: rgb(12, 245, 70);
     }
 
     &__ul {
-        width: 400px;
+        width: auto;
         list-style-type: none;
         display: flex;
         justify-content: space-between;
         color: white;
         align-items: center;
         text-decoration: none;
-        margin-right: 60px;
+        margin-left: 60px;
     }
 
     &__a {
         color: white;
         align-items: center;
         text-decoration: none;
+        margin: 0 20px 0 auto;
 
         &:hover {
             color: $colgre;
@@ -135,7 +136,7 @@ $colActive: rgb(12, 245, 70);
     margin-top: 101px;
     padding: 20px 5px;
     border: 1px solid rgba(0, 0, 0, 0.171);
-    background-color: rgb(247, 240, 241);
+    background-color: rgb(253, 253, 253);
 
     &__product {
         width: 20%;
@@ -148,11 +149,12 @@ $colActive: rgb(12, 245, 70);
         text-decoration: none;
         background-color: white;
         margin: 5px;
-        transition: transform 200ms;
-        transform: scale(1);
+        transition: border-color 200ms;
+       
 
         &:hover {
-            transform: scale(1.05);
+            border-color: rgb(211, 123, 41);
+            color: white;
         }
     }
 
@@ -222,8 +224,11 @@ $colActive: rgb(12, 245, 70);
     display: flex;
     flex-direction: column;
     margin-top: 100px;
-    height: calc(100vh - 164px);
+    
+    min-height: calc(100vh - 164px);
     justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(128, 128, 128, 0.452);
 
     & > h1 {
         margin: 20px auto;

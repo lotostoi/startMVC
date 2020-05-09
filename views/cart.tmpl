@@ -1,0 +1,43 @@
+<div class="contMain">
+
+    <div class="contCartProducts__bodyCart">
+
+        {% for good_in_cart in goods_in_cart  %}
+        <div class="contCartProducts__contItem">
+            <img src="{{ good_in_cart.link }}" width="100" height="150" alt="imgProduct" class="contCartProducts__img">
+            <span class="contCartProducts__name">{{ good_in_cart.name }}</span>
+            <span class="contCartProducts__price" data-price="{{ good_in_cart.price }}"
+                data-priceId="{{good_in_cart.id_product}}">$ {{ good_in_cart.price * good_in_cart.quantity}}</span>
+            <span class="contCartProducts__quantity" data-quant="{{ good_in_cart.quantity}}"
+                data-quantId="{{good_in_cart.id_product}}">{{ good_in_cart.quantity}}
+                шт</span>
+            <div class="contCartProducts__buttons">
+                <button data-userid="{{session_id_user}}" data-id="{{good_in_cart.id_product}}"
+                    class="contCartProducts__add">&#9650</button>
+                <button data-userid="{{session_id_user}}" data-id="{{good_in_cart.id_product}}"
+                    class="contCartProducts__del">&#9660</button>
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="contCartProducts__rethult">
+            <span class="contCartProducts__span">Итого:</span>
+            <span class="contCartProducts__allSumm"> $ {{ cart.allsum ? cart.allsum: 0 }} </span>
+            <span class="contCartProducts__allQuantity"> {{ cart.allquantity ? cart.allquantity :0}} шт</span>
+            <button class="contCartProducts__allClean" data-userid="{{session_id_user}}">
+                Очистить корзину
+            </button>
+        </div>
+        {% if session_id_user != null  %}
+
+        {% include 'make_order_reg.tmpl' %}
+
+        {% else %}
+
+        {% include 'make_order_no_reg.tmpl' %}
+
+        {% endif %}
+    </div>
+</div>
+
+<script src='./js/cart.js'></script>
