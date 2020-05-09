@@ -52,7 +52,7 @@ let request = new FormData()
 request.append('startN', `${st}`)
 request.append('finishN', `${fn}`)
 
-SH.getCotalog('./controller/server.php', 'post', request)
+SH.getCotalog('./controller/serv.php', 'post', request)
 
 document.querySelector('.load').addEventListener('click', () => {
 
@@ -62,7 +62,7 @@ document.querySelector('.load').addEventListener('click', () => {
     request.append('startN', `${st}`)
     request.append('finishN', `${fn}`)
 
-    SH.getCotalog('./controller/server.php', 'post', request)
+    SH.getCotalog('./controller/serv.php', 'post', request)
 
 })
 
