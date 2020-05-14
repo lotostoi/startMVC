@@ -1,0 +1,55 @@
+<section class="slider">
+    <div class="next" data-id="next">
+        <svg width="6" height="11" class="nextSvg" data-id="next">
+            <path data-id="next"
+                d="M5.667,5.877 L1.832,9.700 C1.408,10.123 0.721,10.123 0.298,9.700 C-0.126,9.279 -0.126,8.593 0.298,8.170 L3.465,5.014 L0.298,1.857 C-0.126,1.434 -0.126,0.749 0.298,0.326 C0.721,-0.096 1.408,-0.096 1.832,0.326 L5.667,4.150 C5.904,4.386 5.994,4.704 5.965,5.013 C5.994,5.323 5.904,5.640 5.667,5.877 Z" />
+        </svg>
+    </div>
+    <div class="pagination">
+        <div class="check checkActiv" data-number="1"></div>
+        <div class="check" data-number="2"></div>
+        <div class="check" data-number="3"></div>
+        <div class="check" data-number="4"></div>
+    </div>
+    <div class="bunner bunnerActiv" data-id="1">
+        <div class="bunner__contContent">
+            <h3>Хит продаж</h3>
+            <h2 class="bunner__h2">{{goods[0].name}}</h2>
+            <a href="index.php?page=good/{{goods[0].id}}" class="bunner__a">Подробнее о товаре</a>
+            <button class="bunner__button" data-id='{{goods[0].id}}' data-user="{{goods[0].id_user}}">Добавить в
+                корзину</button>
+        </div>
+        <img src=" {{goods[0].link}}" height="480" alt="" class="bunner__imgProduct" />
+    </div>
+    <div class="bunner" data-id="2">
+        <div class="bunner__contContent">
+            <h3>Хит продаж</h3>
+            <h2 class="bunner__h2">{{goods[1].name}}</h2>
+            <a href="index.php?page=good/{{goods[0].id}}" class="bunner__a">Подробнее о товаре</a>
+            <button class="bunner__button" data-id='{{goods[1].id}}' data-user="{{goods[1].id_user}}">Добавить в
+                корзину</button>
+        </div>
+        <img src=" {{goods[1].link}}" height="480" alt="" class="bunner__imgProduct" />
+    </div>
+    <div class="bunner" data-id="3">
+        <div class="bunner__contContent">
+            <h3>Хит продаж</h3>
+            <h2 class="bunner__h2">{{goods[2].name}}</h2>
+            <a href="index.php?page=good/{{goods[0].id}}" class="bunner__a">Подробнее о товаре</a>
+            <button class="bunner__button" data-id='{{goods[2].id}}' data-user="{{goods[2].id_user}}">Добавить в
+                корзину</button>
+        </div>
+        <img src="{{goods[2].link}}" height="480" alt="" class="bunner__imgProduct" />
+    </div>
+    <div class="bunner" data-id="4">
+        <div class="bunner__contContent">
+            <h3>Хит продаж</h3>
+            <h2 class="bunner__h2">{{goods[3].name}}</h2>
+            <a href="index.php?page=good/{{goods[0].id}}" class="bunner__a">Подробнее о товаре</a>
+            <button class="bunner__button" data-id='{{goods[3].id}}' data-user="{{goods[3].id_user}}">Добавить в
+                корзину</button>
+        </div>
+        <img src=" {{goods[3].link}}" height="480" alt="" class="bunner__imgProduct" />
+    </div>
+</section>
+<script src="./src/js/slider.js"></script>

@@ -12,15 +12,17 @@ class Auth extends CreatePage
         switch ($method) {
 
             case 'registration':
-                $m_auth = new \models\M_registration();
+                $m_auth = new \models\auth\M_registration();
                 break;
 
             case 'entry':
-                $m_auth = new \models\M_entry();
+                $m_auth = new \models\auth\M_entry();
                 break;
 
             case 'personalarea':
-                $m_auth = new \models\M_personalarea();
+                $m_auth = new \models\auth\M_personalarea();
+                $m_auth->changeTamplate();
+                $m_auth->saveChang();
                 break;
 
             default:
@@ -45,6 +47,8 @@ class Auth extends CreatePage
                 'data' => $m_auth->userData,
                 'status' => $m_auth->body_message,
                 'nameButton' => $m_auth->name_button,
+                'template'=> $m_auth->template,
+                'error'=> $m_auth->error
             ],
 
         ];

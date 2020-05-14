@@ -1,5 +1,5 @@
 <?php
-namespace models;
+namespace models\server;
 
 class S_cotalog
 {
@@ -8,8 +8,8 @@ class S_cotalog
     public function __construct()
     {
         session_start();
-        \models\DB::instance();
-        $this->db = \models\DB::$db;
+        \models\db\DB::instance();
+        $this->db = \models\db\DB::$db;
         $this->serv();
     }
     private function serv()

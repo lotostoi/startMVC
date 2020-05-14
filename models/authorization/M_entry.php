@@ -1,7 +1,7 @@
 <?php
-namespace models;
+namespace models\auth;
 
-class M_entry extends M_start
+class M_entry extends \models\M_start
 {
     // переманная определяющая текст сообщения о результате регистрации
     public $body_message;
@@ -46,7 +46,7 @@ class M_entry extends M_start
                     $_SESSION['user_entry'] = $_POST['login_entry'];
                     $_SESSION['id_user_entry'] =$this->db->getArr(USERS)[$index - 1]['id'];
                     $_SESSION['status_user_entry'] =$this->db->getArr(USERS)[$index - 1]['status'];
-                    $_SESSION['login_entry'] =$this->db->getArr(USERS)[$index - 1]['name'];
+                    $_SESSION['login_entry'] =$this->db->getArr(USERS)[$index - 1]['login'];
                     $_SESSION['name_entry'] =$this->db->getArr(USERS)[$index - 1]['name'];
                     $_SESSION['email_entry'] =$this->db->getArr(USERS)[$index - 1]['email'];
                     $_SESSION['phone_entry'] =$this->db->getArr(USERS)[$index - 1]['phone']; 

@@ -25,13 +25,13 @@ class M_start
     { // старт или продолжение сессии
         $this->startSession();
 
-        \models\DB::instance();
-        $this->db = \models\DB::$db;
+        \models\db\DB::instance();
+        $this->db = \models\db\DB::$db;
 
         $this->exit = 'exit';
         $this->entry = 'entry';
 
-        $this->user_s_name = $_SESSION['user_entry'] ?: null;
+        $this->user_s_name = $_SESSION['name_entry'] ?: null;
         $this->user_s_login = $_SESSION['login_entry'] ?: null;
         $this->user_s_email = $_SESSION['email_entry'] ?: null;
         $this->user_s_phone = $_SESSION['phone_entry'] ?: null;

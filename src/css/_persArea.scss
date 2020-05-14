@@ -1,31 +1,54 @@
 .persArea {
     margin: auto;
-    // width: 50%;
+    width: 100%;
+    height: inherit;
     padding: 50px;
     display: flex;
+    flex: 1 0 auto;
     flex-direction: column;
     border-radius: 20px;
-    background-color: rgb(204, 200, 200);
-    &__h3 {
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    &__h2 {
         font-size: 25px;
         margin: 20px auto;
         text-align: center;
-
     }
+}
+
+.userData {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(22, 22, 22);
+    padding: 20px;
+    margin-top: 20px;
+    & > h3 {
+        font-size: 25px;
+        color: rgb(39, 39, 39);
+        font-family: $mr;
+        margin-bottom: 20px;
+    }
+
     &__label {
         width: 100%;
         display: flex;
         margin: 10px 0;
         box-sizing: content-box;
         align-items: center;
+        justify-content: start;
     }
     &__title {
+        width: 110px;
         font-size: 20px;
         margin-right: 5px;
     }
     &__value {
         font-size: 18px;
-        margin-left: auto;
+        margin-right: auto;
+        text-align-last: left;
+        font-style: italic;
+        color: rgb(163, 4, 97);
     }
     &__input {
         padding: 3px;
@@ -35,34 +58,29 @@
         margin-left: auto;
     }
     &__btnEdit {
-        margin: 20px auto 0;
+        margin: 10px 0 0;
         display: flex;
         padding: 5px 10px;
         height: 0;
         max-width: 200px;
-        min-height: 40px;
-        border-radius: 10px;
-        border: 1px solid #200111;
+        min-height: 40px;    
+        border: none;
         font-size: 16px;
         font-family: $mr;
         align-items: center;
-        justify-content: center;
-       // text-transform: uppercase;
-        background-color: #200111;
+        justify-content: flex-start;
+        background-color: #fff;
         outline: none;
-        color: #fff;
+        color: blue;
+        font-size: 14px;
         flex-wrap: wrap;
-        //flex-wrap: wrap-reverse;
-
-
+   
         &:hover {
-            background-color: #380734;
-            border: 1px solid #380734;
+           color: rgb(243, 44, 9);
         }
 
         &:active {
-            background-color: #030c29;
-            border: 1px solid #030c29;
+           color: rgb(194, 30, 8);
         }
     }
 }

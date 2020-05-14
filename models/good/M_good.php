@@ -1,7 +1,7 @@
 <?php
-namespace models;
+namespace models\good;
 
-class M_good extends M_start
+class M_good extends \models\M_start
 {
     public $dataGood;
 

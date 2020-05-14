@@ -1,5 +1,5 @@
 <?php
-namespace models;
+namespace models\server;
 
 
 
@@ -10,8 +10,8 @@ class S_cart_for_auth_user
     public function __construct()
     {
         session_start();
-        \models\DB::instance();
-        $this->db = \models\DB::$db;
+        \models\db\DB::instance();
+        $this->db = \models\db\DB::$db;
         $this->serv();
     }
 

@@ -1,7 +1,7 @@
 <?php
-namespace models;
+namespace models\auth;
 
-class M_registration extends M_start
+class M_registration extends \models\M_start
 {
     // переманная определяющая текст сообщения о результате регистрации
     public $body_message;

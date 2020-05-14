@@ -1,5 +1,5 @@
 <?php
-namespace models;
+namespace models\server;
 
 class M_server
 {
@@ -15,15 +15,15 @@ class M_server
     {
         if (isset($_POST['startN'])) {
 
-            new \models\S_cotalog();
+            new \models\server\S_cotalog();
 
         } elseif (!isset($_SESSION['id_user_entry'])) {
 
-            new \models\S_cart_for_no_auth_user();
+            new \models\server\S_cart_for_no_auth_user();
 
         } else {
 
-            new \models\S_cart_for_auth_user();
+            new \models\server\S_cart_for_auth_user();
 
         }
 

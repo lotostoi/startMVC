@@ -1,26 +1,62 @@
 <div class="contMain">
 
-    <form class="persArea" method="POST">
+    <div class="persArea">
 
-        <h3 class="persArea__h3"> Личный кабинет </h3>
-        <label class="persArea__label">
-            <span class="persArea__title">Логин:</span>
-            <span class="persArea__value"> {{ data.login_pa }} </span>
-        </label>
-        <label class="persArea__label">
-            <span class="persArea__title">Имя:</span>
-            <span class="persArea__value">{{ data.name_pa }}</span>
-        </label>
-        <label class="persArea__label">
-            <span class="persArea__title">E-mail:</span>
-            <span class="persArea__value">{{ data.email_pa }} </span>
-        </label>
-        <label class="persArea__label">
-            <span class="persArea__title">Телефон:</span>
-            <span class="persArea__value">{{ data.phone_pa }} </span>
-        </label>
-        <button type="submit" class="persArea__btnEdit" name="persAreaEdit"> Изменить </button>
+        <h2 class="persArea__h2"> Личный кабинет </h2>
 
-    </form>
+        {% if  template  == "show" %}
+        <form class='userData' method="POST">
+            <h3>Личные данные</h3>
+            <label class="userData__label">
+                <span class="userData__title">Логин:</span>
+                <span class="userData__value"> {{ data.login_pa }} </span>
+            </label>
+            <label class="userData__label">
+                <span class="userData__title">Имя:</span>
+                <span class="userData__value">{{ data.name_pa }}</span>
+            </label>
+            <label class="userData__label">
+                <span class="userData__title">E-mail:</span>
+                <span class="userData__value">{{ data.email_pa }} </span>
+            </label>
+            <label class="userData__label">
+                <span class="userData__title">Телефон:</span>
+                <span class="userData__value">{{ data.phone_pa }} </span>
+            </label>
+            <button type="submit" class="userData__btnEdit" name="persAreaEdit"> Редактировть </button>
+        </form>
+        {% else %}
+        <form class='userData' method="POST" >
+            <h3>Личные данные</h3>
+      
+            <label class="userData__label">
+                <span class="userData__title">Логин:</span>
+                <input type="text" name="login" value="{{ data.login_pa }}">
+            </label>
+            <label class="userData__label">
+                <span class="userData__title">Имя:</span>
+                <input type="text" name="name" value="{{ data.name_pa }}">
+            </label>
+            <label class="userData__label">
+                <span class="userData__title">E-mail:</span>
+                <input type="email" name="email" value="{{ data.email_pa }}">
+            </label>
+            <label class="userData__label">
+                <span class="userData__title">Пароль:</span>
+              
+                <input type="password" autocomplete = "new-password" class="{{error?:null}}" name="pas1" value="{{  null }}">
+            </label>
+            <label class="userData__label">
+                <span class="userData__title">Пароль:</span>
+                <input type="password" autocomplete = "new-password" class="{{error?:null}}" name="pas2" value="{{ null }}">
+            </label>
+            <label class="userData__label">
+                <span class="userData__title">Телефон:</span>
+                <input type="tel" name="phone" value="{{ data.phone_pa }}">
+            </label>
+            <button type="submit" class="userData__btnEdit" name="persAreaSave"> Сохранить </button>
+        </form>
+        {% endif %}
+    </div>
 
 </div>

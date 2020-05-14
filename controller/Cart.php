@@ -11,7 +11,11 @@ class Cart extends CreatePage
 
         // создаем объект класса авторизация
 
-        $cart = new \models\M_cart();
+        $cart = new \models\cart\M_cart();
+        
+        $cart->setData();
+
+        $order = new \models\orders\M_orders();
 
         // готовим данные для шаблона шапки сайта
         $header = [
@@ -22,7 +26,13 @@ class Cart extends CreatePage
         // готовим данные для шаблона контента сайта
         $content = [
             'tmpl' => 'cart.tmpl',
-            'data' => ['goods_in_cart' => $cart->goods_in_cart, 'session_id_user' => $cart->session_id_user, 'cart' => $cart->cart],
+            'data' => [
+                'goods_in_cart' => $cart->goods_in_cart,
+                'session_id_user' => $cart->session_id_user,
+                'cart' => $cart->cart,
+                'orderSend'=> $order->orderSend,
+                'error'=> $order->error,         
+                'fields'=> $order->fields]         
         ];
 
         // вызываем метод формирования данных для шабловнов
