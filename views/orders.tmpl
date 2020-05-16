@@ -1,0 +1,20 @@
+<section class="orders">
+    <h3> История ваших заказов</h3>
+    <ul class="orders__title">
+        <li class="title__data">Дата заказа</li>
+        <li class="title__sum">Сумма заказа</li>
+        <li class="title__status">Статус заказа</li>
+        <li class="title">Посмотреть заказ</li>
+    </ul>
+
+    {% for order in orders %}
+    <ul class="orders__ord">
+        <li class="ord__data">{{order.date}}</li>
+        <li class="ord__sum">$ {{order.allSum}}</li>
+        <li class="ord__status">{{order.status}}</li>
+        <li class="ord" data-id="{{order.id}}">Посмотреть заказ</li>
+    </ul>
+    {% endfor %}
+
+
+</section>

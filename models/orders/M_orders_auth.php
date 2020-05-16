@@ -29,6 +29,7 @@ class M_orders_auth
         $this->order = [
             ':id' => null,
             ':n' => $_SESSION['user_entry'],
+            ':id_u' => $_SESSION['id_user_entry'],
             ':d' => date('Y-m-d h:i:s'),
             ':e' => $this->db->select("SELECT * FROM " . USERS . " WHERE id = :id", [':id' => $id_user])[0]['email'],
             ':p' => $this->db->select("SELECT * FROM " . USERS . " WHERE id = :id", [':id' => $id_user])[0]['phone'],
@@ -36,12 +37,13 @@ class M_orders_auth
             ':q' => $this->db->all_sum_cart($id_user)['quant'],
             ':i' => json_encode($cart),
             ':de' => $_POST['text_order'] ?: '',
+            ':st' => 'в обработке',
         ];
 
         // усли нажата кнопка сделать заказа и корзина не пустая
         if (isset($_POST['makeOrder']) && $this->checkCart($id_user)) {
 
-            $or = $this->db->insert("INSERT INTO " . ORDERS . " VALUES(:id,:n,:d,:e,:p,:s,:q,:i,:de)", $this->order);
+            $or = $this->db->insert("INSERT INTO " . ORDERS . " VALUES(:id,:n,:id_u,:d,:e,:p,:s,:q,:i,:de,:st)", $this->order);
             if ($or) {
                 $_SESSION['orderSend'] = 'Good';
                 $c = new \models\cart\M_cart();

@@ -48,7 +48,8 @@ class Auth extends CreatePage
                 'status' => $m_auth->body_message,
                 'nameButton' => $m_auth->name_button,
                 'template'=> $m_auth->template,
-                'error'=> $m_auth->error
+                'error'=> $m_auth->error,
+                'orders'=> $m_auth->orders,
             ],
 
         ];

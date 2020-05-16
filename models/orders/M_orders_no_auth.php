@@ -44,6 +44,7 @@ class M_orders_no_auth
         $this->order = [
             ':id' => null,
             ':n' => $_POST['name_order'],
+            ':id_u' => null,
             ':d' => date('Y-m-d h:i:s'),
             ':e' => $_POST['email_order'],
             ':p' => $_POST['phone_order'],
@@ -51,6 +52,7 @@ class M_orders_no_auth
             ':q' => $_SESSION['cart_result']['allquantity'],
             ':i' => json_encode($_SESSION['cart']),
             ':de' => $_POST['text_order'] ?: '',
+            ':st' => 'в обработке',
         ];
 
         // усли нажата кнопка сделать заказа и корзина не пустая
@@ -67,7 +69,7 @@ class M_orders_no_auth
             $this->validForm();
 
             if ($this->validForm()) {
-                $or = $this->db->insert("INSERT INTO " . ORDERS . " VALUES(:id,:n,:d,:e,:p,:s,:q,:i,:de)", $this->order);
+                $or = $this->db->insert("INSERT INTO " . ORDERS . " VALUES(:id,:n,:id_u,:d,:e,:p,:s,:q,:i,:de,:st)", $this->order);
                 if ($or) {
                     $_SESSION['orderSend'] = 'Good';
 

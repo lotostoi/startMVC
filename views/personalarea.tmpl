@@ -5,58 +5,11 @@
         <h2 class="persArea__h2"> Личный кабинет </h2>
 
         {% if  template  == "show" %}
-        <form class='userData' method="POST">
-            <h3>Личные данные</h3>
-            <label class="userData__label">
-                <span class="userData__title">Логин:</span>
-                <span class="userData__value"> {{ data.login_pa }} </span>
-            </label>
-            <label class="userData__label">
-                <span class="userData__title">Имя:</span>
-                <span class="userData__value">{{ data.name_pa }}</span>
-            </label>
-            <label class="userData__label">
-                <span class="userData__title">E-mail:</span>
-                <span class="userData__value">{{ data.email_pa }} </span>
-            </label>
-            <label class="userData__label">
-                <span class="userData__title">Телефон:</span>
-                <span class="userData__value">{{ data.phone_pa }} </span>
-            </label>
-            <button type="submit" class="userData__btnEdit" name="persAreaEdit"> Редактировть </button>
-        </form>
+        {% include 'showpersonaldata.tmpl' %}
         {% else %}
-        <form class='userData' method="POST" >
-            <h3>Личные данные</h3>
-      
-            <label class="userData__label">
-                <span class="userData__title">Логин:</span>
-                <input type="text" name="login" value="{{ data.login_pa }}">
-            </label>
-            <label class="userData__label">
-                <span class="userData__title">Имя:</span>
-                <input type="text" name="name" value="{{ data.name_pa }}">
-            </label>
-            <label class="userData__label">
-                <span class="userData__title">E-mail:</span>
-                <input type="email" name="email" value="{{ data.email_pa }}">
-            </label>
-            <label class="userData__label">
-                <span class="userData__title">Пароль:</span>
-              
-                <input type="password" autocomplete = "new-password" class="{{error?:null}}" name="pas1" value="{{  null }}">
-            </label>
-            <label class="userData__label">
-                <span class="userData__title">Пароль:</span>
-                <input type="password" autocomplete = "new-password" class="{{error?:null}}" name="pas2" value="{{ null }}">
-            </label>
-            <label class="userData__label">
-                <span class="userData__title">Телефон:</span>
-                <input type="tel" name="phone" value="{{ data.phone_pa }}">
-            </label>
-            <button type="submit" class="userData__btnEdit" name="persAreaSave"> Сохранить </button>
-        </form>
+        {% include 'editpersonaldata.tmpl' %}
         {% endif %}
+        {% include 'orders.tmpl' %}
     </div>
 
 </div>
