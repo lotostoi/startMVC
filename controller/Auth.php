@@ -50,9 +50,11 @@ class Auth extends CreatePage
                 'template'=> $m_auth->template,
                 'error'=> $m_auth->error,
                 'orders'=> $m_auth->orders,
+                'goods'=> $m_auth->goods
             ],
 
         ];
+        print_r($m_auth->goods);
 
         // вызываем метод формирования данных для шабловнов
 

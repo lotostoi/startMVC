@@ -18,6 +18,10 @@ class M_personalarea extends \models\M_start
 
     public $orders;
 
+    // описание отдельного заказ
+
+    public $goods;
+
     public function __construct()
     {
         parent::__construct();
@@ -35,6 +39,8 @@ class M_personalarea extends \models\M_start
         $ord = new \models\orders\M_getorder();
 
         $this->orders = $ord->getOrderUser($_SESSION['id_user_entry']);
+
+      //  $this->goods = $ord -> getArrOrdersInfo($_SESSION['id_user_entry']);
 
         $this->showError();
 
