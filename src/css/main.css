@@ -1380,7 +1380,7 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: calc(100vh - 102px);
+  min-height: calc(100vh - 152px);
   position: relative;
 }
 
@@ -1498,7 +1498,7 @@ img {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  min-height: calc(100vh - 102px);
+  min-height: calc(100vh - 152px);
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   -webkit-box-align: center;
