@@ -3,6 +3,7 @@ namespace models\orders;
 
 class M_getorder
 {
+    
     public $db;
 
     public function __construct()
@@ -16,7 +17,7 @@ class M_getorder
     public function getAllOrders()
     {
         $orders = $this->db->select('SELECT * FROM ' . ORDERS, []);
-        return $order;
+        return $orders;
     }
 
     // получаем все заказы пользователя
@@ -47,15 +48,12 @@ class M_getorder
 
             }
 
-        
-
             $orders[$i++]['goods'] = $goods;
 
         }
 
-      
-
         return $orders;
+
     }
 
 }

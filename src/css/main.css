@@ -1508,6 +1508,18 @@ img {
   transition: opacity 600ms linear, -webkit-transform 10ms linear 600ms;
   transition: opacity 600ms linear, transform 10ms linear 600ms;
   transition: opacity 600ms linear, transform 10ms linear 600ms, -webkit-transform 10ms linear 600ms;
+  /*   @include to(1350px) {
+    &__imgProduct {
+      margin: auto 200px auto auto;
+      width: 250px;
+    }
+  }
+  @include to(1050px) {
+    &__imgProduct {
+      margin: auto 100px auto auto;
+      width: 250px;
+    }
+  } */
 }
 
 .bunner__contContent {
@@ -1616,23 +1628,26 @@ img {
   border: 2px solid #030c29;
 }
 
-.bunner__imgProduct {
-  margin: 10px 20% 10px auto;
+.bunner .slImg {
+  min-width: 10%;
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  margin: 10px 15% 10px auto;
+}
+
+.bunner .slImg .imgProduct {
+  margin: auto;
   height: 500px;
-}
-
-@media screen and (max-width: 1350px) {
-  .bunner__imgProduct {
-    margin: auto 200px auto auto;
-    width: 250px;
-  }
-}
-
-@media screen and (max-width: 1050px) {
-  .bunner__imgProduct {
-    margin: auto 100px auto auto;
-    width: 250px;
-  }
 }
 
 .bunnerActiv {
@@ -2624,7 +2639,7 @@ body {
       justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: 101px;
+  margin-top: 151px;
   padding: 20px 5px;
   border: 1px solid rgba(0, 0, 0, 0.171);
   background-color: #fdfdfd;
