@@ -3,15 +3,13 @@
     <div class="persArea">
 
         <h2 class="persArea__h2"> Личный кабинет </h2>
-        <div class="dataandorders">
-            {% if  template  == "show" %}
-            {% include 'showpersonaldata.tmpl' %}
-            {% else %}
-            {% include 'editpersonaldata.tmpl' %}
-            {% endif %}
-            {% include 'orders.tmpl' %}
-        </div>
 
+        {% if  template  == "show" %}
+        {% include 'showpersonaldata.tmpl' %}
+        {% else %}
+        {% include 'editpersonaldata.tmpl' %}
+        {% endif %}
+        {% include 'orders.tmpl' %}
     </div>
 
 </div>
