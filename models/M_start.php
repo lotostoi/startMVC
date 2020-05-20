@@ -21,6 +21,9 @@ class M_start
     // переменная содержащя общее количество товаров в корзине
     public $quantity;
 
+    // значние поля поиска 
+    public $fieldSearch;
+
     public function __construct()
     { // старт или продолжение сессии
         $this->startSession();
@@ -49,6 +52,11 @@ class M_start
         
         // определяем количество товров в корзине
         $this->getQuantity();
+
+        // запускаем работу поиска
+        $this->createDataForSearch();
+
+        $this->fieldSearch = $_SESSION['dataForSearch'] ?: '';
 
 
     }
@@ -80,7 +88,7 @@ class M_start
 
     }
     // если пользователь не авторизовн присваиваем ему следющй после последнего id в таблице юзеров.
-    private function setIDforNoUser()
+ /*    private function setIDforNoUser()
     {
         if (!isset($_SESSION['id_user_entry'])) {
             $arr_users = $this->db->getArr(USERS);
@@ -92,7 +100,7 @@ class M_start
             
         }
 
-    }
+    } */
     
     private function getQuantity()
     {
@@ -103,5 +111,16 @@ class M_start
         }
 
     }
+
+    private function createDataForSearch() {
+
+        if (isset($_POST['startSearch']) ) {
+
+            $_SESSION['dataForSearch'] = $_POST['search'];
+
+            header('Location: ' . 'index.php?page=cotalog');
+        }
+    }
+
 
 }
