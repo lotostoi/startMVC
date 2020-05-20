@@ -20,6 +20,7 @@ class Good {
 class Shop extends Good {
     cotalog = [];
     id_user = '';
+    button_off = false;
     getCotalog(url, type, data) { // метод для отправки данных на сервер
         return fetch(url, {
             method: type,
@@ -29,18 +30,29 @@ class Shop extends Good {
             .then(data => {
                 this.cotalog = data.cotalog
                 this.id_user = data.id_user
-                console.log(this.id_user);
+                this.button_off = data.button_off
             })
-            .then(data => this.render (this.cotalog))
+            .then(data => this.render(this.cotalog, this.button_off ))
     }
-    render(arrGoods) {
+    render(arrGoods, button_off) {
         let el = document.querySelector('.contCotalog')
-        arrGoods.forEach(e => {
-            console.log(this)
-            if (el) {
-                el.innerHTML += this.renderGood(e.id, e.name, e.linkImg, e.price, e.description)
-            }
-        });
+        if (button_off) {
+            document.querySelector('.load').style.display = 'none'
+        } else {
+            document.querySelector('.load').style.display = 'flex'
+        }
+
+        if (!arrGoods) {
+            el.innerHTML = `<h3> По вашему запросу совпадений не найдено! </h3>`
+        } else {
+            arrGoods.forEach(e => {
+                console.log(this)
+                if (el) {
+                    el.innerHTML += this.renderGood(e.id, e.name, e.linkImg, e.price, e.description)
+                }
+            });
+        }
+
     }
 }
 

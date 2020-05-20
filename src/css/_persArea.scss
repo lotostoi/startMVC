@@ -4,37 +4,127 @@
     padding: 80px 0;
     border: 1px solid rgb(177, 174, 174);
     min-height: 600px;
+    justify-content: center;
 }
 
 .persArea {
-    width: 100%;
+    width: 98%;
+    height: auto;
     padding: 10px 50px;
+    flex-direction: column;
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(255, 255, 255);
     box-sizing: border-box;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     &__h2 {
         display: flex;
         width: 100%;
         font-size: 40px;
-        margin: 20px auto 30px;
+        margin: 20px auto 50px;
         font-weight: 600;
         height: 40px;
         align-items: center;
         justify-content: center;
     }
+    & > .dataandorders {
+        display: flex;
+        width: 100%;
+    }
 }
 
-.userData {
+.userDataEdit {
     width: 340px;
+    height: 480px;
     display: flex;
     flex-direction: column;
     border: 1px solid rgb(97, 96, 96);
     padding: 20px;
     background-color: rgb(68, 67, 67);
     color: white;
+
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    & > h3 {
+        font-size: 25px;
+        font-family: $mr;
+        margin-bottom: 20px;
+    }
+
+    &__label {
+        width: 100%;
+        display: flex;
+        margin: 10px 0;
+        box-sizing: content-box;
+        align-items: center;
+        justify-content: start;
+        & > input {
+            width: 200px;
+            padding: 3px;
+            outline: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-left: auto;
+            border-radius: 5px;
+            height: 30px;
+        }
+
+        & > input.error {
+            border-color: red;
+        }
+    }
+    &__title {
+        width: 110px;
+        font-size: 20px;
+        margin-right: 5px;
+    }
+    &__value {
+        font-size: 18px;
+        margin-right: auto;
+        text-align-last: left;
+        font-style: italic;
+        color: rgb(9, 138, 5);
+    }
+
+    &__btnEdit {
+        margin: 10px 0 0;
+        display: flex;
+        padding: 5px 10px;
+        height: 0;
+        max-width: 200px;
+        min-height: 40px;
+        border: none;
+        font-size: 16px;
+        font-family: $mr;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: rgb(68, 67, 67);
+        outline: none;
+        color: rgb(57, 146, 206);
+        font-size: 16px;
+        flex-wrap: wrap;
+
+        &:hover {
+            color: rgb(243, 44, 9);
+        }
+
+        &:active {
+            color: rgb(194, 30, 8);
+        }
+    }
+}
+.userData {
+    width: 340px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(97, 96, 96);
+    padding: 20px;
+    background-color: rgb(68, 67, 67);
+    color: white;
+
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -170,8 +260,7 @@
             background-color: rgb(57, 146, 206);
             color: black;
             border-color: rgb(49, 49, 49);
-            transform: rotateX(0);
-            transition: transform 1s;
+            transition: background-color 0.5s;
 
             &:hover {
                 cursor: pointer;
@@ -183,10 +272,10 @@
         }
 
         & > li:last-child.base {
-            transform: rotateX(-360deg);
+          //  transform: rotateX(-360deg);
         }
         & > li:last-child.active {
-            transform: rotateX(360deg);
+          //  transform: rotateX(360deg);
             background-color: indianred;
         }
     }
@@ -196,16 +285,15 @@
     flex-direction: column;
     width: 100%;
     width: calc(100% - 5px);
-    margin-left: 5px;
-    transform: scaleY(0);
+    display: none;
     border-left: 1px solid rgba(128, 128, 128, 0.431);
     border-right: 1px solid rgba(128, 128, 128, 0.431);
     border-bottom: 1px solid rgba(128, 128, 128, 0.431);
     box-sizing: border-box;
-
     margin-bottom: 10px;
-    max-height: 0;
-    transition: transform 300ms, max-height 300ms;
+    transition: height 500ms;
+    margin-left: 4px;
+    // height: 0;
 
     & .good {
         display: flex;
@@ -220,6 +308,5 @@
     }
 }
 .active {
-    transform: scaleY(1);
-    max-height: 5000px;
+    display: flex;
 }
