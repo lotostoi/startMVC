@@ -44,7 +44,7 @@ class M_orders_no_auth
         $this->order = [
             ':id' => null,
             ':n' => $_POST['name_order'],
-            ':id_u' => null,
+            ':id_u' => '',
             ':d' => date('Y-m-d h:i:s'),
             ':e' => $_POST['email_order'],
             ':p' => $_POST['phone_order'],

@@ -1,15 +1,15 @@
 <?php
+
 namespace models\reviews;
 
 class M_reviews extends \models\M_start
 {
     public $reviews;
 
-    public function __construct($id_good)
+    public function __construct()
     {
         parent::__construct();
-        $this->getDataReviews($id_good);
-
+        $this->getDataReviews();
     }
 
     public function getDataReviews()
@@ -24,28 +24,24 @@ class M_reviews extends \models\M_start
         $phoneUser = $_POST['phoneUser'];
         $textUser = $_POST['textUser'];
 
-        if ( $sendReview && $textUser != ""  &&  $nameUser != "") {
+        if ($sendReview && $textUser != ""  &&  $nameUser != "") {
 
-            $res = mysqli_query($link, $query->addOneRow($nameTable, null, $nameUser, $dateUser, $emailUser, $phoneUser, $textUser));
+            //$res = mysqli_query($link, $query->addOneRow($nameTable, null, $nameUser, $dateUser, $emailUser, $phoneUser, $textUser));
 
-            
+            $arr = [
+                ':id' => null,
+                ':n' => $nameUser,
+                ':d' => $dateUser,
+                ':e' => $emailUser,
+                ':p' => $phoneUser,
+                ':t' => $textUser
+            ];
 
-            if (!$res) die('Ошибка: ' . mysqli_error($link));
-            mysqli_close($link);
+            $this->db->insert('INSERT INTO ' . REVIEWS . ' VALUES(:id,:n,:d,:e,:p,:t)', $arr);
+            header('Location: ' . $_SERVER['REQUEST_URI']);
+
         }
 
-        $result = mysqli_query($link, $query->sort_max_min($nameTable, "data"));
-        while ($val = mysqli_fetch_assoc($result)) {
-            $name = $val['name'];
-            $data =  $val['data'];
-            $text = $val['text'];
-            echo "
-                <div class='reviews__review'>
-                <span class='reviews__nameUser'> $name </span>
-                <p class='reviews__text'>$text.</p>
-                <span class='reviews__data'> $data </span>
-                </div>";
-        }
+        $this->reviews = $this->db->select('SELECT * FROM ' . REVIEWS.' ORDER BY data DESC', []);
     }
-
 }

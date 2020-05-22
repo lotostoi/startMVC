@@ -1,6 +1,9 @@
+
+
 <div class="contMain">
+
     <form action="#" method="POST" class="writeReview">
-        <h1 class="writeReview__h1"> Пожалуйста оставте отзыв о нашем сайте! </h1>
+        <h1 class="writeReview__h1"> Пожеления и отзывы </h1>
         <label for="#" class="writeReview__user"> Ваше имя:
             <input type="text" name="nameUser" class="writeReview__nameUser">
         </label>
@@ -15,15 +18,15 @@
         </label>
         <input type="submit" name="sendReview" value="Отправить отзыв" class="writeReview__sendData">
     </form>
+    <section class="reviews">
+        {% for review in reviews %} 
+         <div class='reviews__review'>
+         <span class='reviews__nameUser'> {{review.nameUser}} </span>
+         <p class='reviews__text'>{{review.text}}</p>
+         <span class='reviews__data'> {{review.data}} </span>
+         </div>
+        {% endfor %} 
+    </section>
+
 </div>
 
-<section class="reviews">
-           {% for review in rewiews %} 
-            <div class='reviews__review'>
-            <span class='reviews__nameUser'> review.name </span>
-            <p class='reviews__text'>review.text.</p>
-            <span class='reviews__data'> review.data </span>
-            </div>
-           {% endfor %} 
-
-</section>
