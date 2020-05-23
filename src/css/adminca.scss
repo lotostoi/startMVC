@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import "fonts";
+
+.contener {
+    width: 100%;
+
+    margin: 0 auto;
+    flex-direction: column;
+    & > header {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        min-height: 100px;
+        background-color: rgb(41, 40, 40);
+        left: 0;
+        top: 0;
+    }
+    & .admin__headerBody {
+        display: flex;
+        align-items: center;
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    & nav {
+        display: flex;
+
+        & > a {
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 25px;
+            color: rgb(10, 194, 10);
+            font-family: $mr;
+            &:hover {
+                color: rgb(255, 136, 0);
+            }
+            &:active {
+                color: rgb(255, 51, 0);
+            }
+        }
+    }
+}
+
+.admin__cotalog {
+    margin-top: 100px;
+
+    & .cont__cotalogAdmin {
+        display: flex;
+        align-items: center;
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgb(230, 227, 227);
+        flex-direction: column;
+        & nav {
+            margin: 20px;
+        }
+
+        & .admin__goodAdmin {
+            display: flex;
+            margin: 20px;
+            padding: 20px 200px;
+            background-color: white;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            -webkit-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+            & > img {
+                height: 100px;
+            }
+            & > span {
+                font-size: 20px;
+                font-family: $mr;
+                font-weight: 400;
+            }
+            & span.good_name {
+                width: 300px;
+                text-align: center;
+            }
+            & > button {
+                display: flex;
+                min-width: 200px;
+                height: 0;
+                min-height: 30px;
+                border-radius: 1px;
+                border: 2px solid #2754eb;
+                font-size: 11px;
+                font-family: $mr;
+                align-items: center;
+                justify-content: center;
+                text-transform: uppercase;
+                background-color: #2754eb;
+                outline: none;
+                color: #fff;
+                // margin-left: auto;
+
+                &:hover {
+                    background-color: #263158;
+                    border: 2px solid#263158;
+                }
+
+                &:active {
+                    background-color: #030c29;
+                    border: 2px solid #030c29;
+                }
+            }
+        }
+    }
+}

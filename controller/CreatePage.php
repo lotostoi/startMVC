@@ -12,7 +12,7 @@ class CreatePage extends Controller
 
     public function __construct()
     {
-        
+
         $this->getPageName();
 
     }
@@ -24,15 +24,27 @@ class CreatePage extends Controller
         $this->content = $this->viewTamplate($content['tmpl'], $content['data']);
     }
 
+    public function p_admin($title, $content)
+    {
+        $this->title = $title;
+        $this->content = $this->viewTamplate($content['tmpl'], $content['data']);
+    }
+
     public function render()
     {
         $arrShop = ['title' => $this->title, 'header' => $this->header, 'content' => $this->content];
         echo parent::viewTamplate('main.tmpl', $arrShop);
     }
 
+    public function render_admin()
+    {
+        $arrShop = ['title' => $this->title, 'header' => $this->header, 'content' => $this->content];
+        echo parent::viewTamplate('adminca.tmpl', $arrShop);
+    }
+
     private function getPageName()
     {
         $this->name_page = $_GET['page'] ? $_GET['page'] : 'aboutshop';
-     
+
     }
 }

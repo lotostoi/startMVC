@@ -1,0 +1,28 @@
+<section class="admin__cotalog">
+    <div class="cont__cotalogAdmin">
+        <nav>
+            <a href="">Добавть товар</a>
+            <a href="">Редактировать товары</a>
+        </nav>
+        {% for good in goods%}
+        <div class="admin__goodAdmin">
+        
+            <span class="good_id"> id - товара {{good.id}}</span>
+        
+            <img src="{{good.linkImg}}" alt="{{good.name}}">
+        
+            <span class="good_name">{{good.name}}</span>
+        
+            <button data-id-good-admin="{{good.id}}">Редактировть товар</button>
+        
+        </div>
+        {% endfor %}
+
+
+
+    </div>
+
+  
+
+
+</section>

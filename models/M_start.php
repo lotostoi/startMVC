@@ -24,6 +24,10 @@ class M_start
     // значние поля поиска 
     public $fieldSearch;
 
+    // User's status
+    
+    public $status_user;
+
     public function __construct()
     { // старт или продолжение сессии
         $this->startSession();
@@ -57,6 +61,8 @@ class M_start
         $this->createDataForSearch();
 
         $this->fieldSearch = $_SESSION['dataForSearch'] ?: '';
+
+        $this->status_user = $_SESSION['status_entry'] ?: '';
 
 
     }

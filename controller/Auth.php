@@ -36,7 +36,7 @@ class Auth extends CreatePage
         // готовим данные для шаблона шапки сайта
         $header = [
             'tmpl' => 'header.tmpl',
-            'data' => ['name_user' => $_SESSION['user_entry'], 'allquantity' => $m_auth->quantity],
+            'data' => ['name_user' => $_SESSION['user_entry'], 'status_user'=> $m_auth->status_user, 'allquantity' => $m_auth->quantity],
         ];
 
         // готовим данные для шаблона контента сайта

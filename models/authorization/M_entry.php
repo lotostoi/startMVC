@@ -50,6 +50,7 @@ class M_entry extends \models\M_start
                     $_SESSION['name_entry'] =$this->db->getArr(USERS)[$index - 1]['name'];
                     $_SESSION['email_entry'] =$this->db->getArr(USERS)[$index - 1]['email'];
                     $_SESSION['phone_entry'] =$this->db->getArr(USERS)[$index - 1]['phone']; 
+                    $_SESSION['status_entry'] =$this->db->getArr(USERS)[$index - 1]['status']; 
                     $this->name_button = 'exit';
                     $this->body_message = 'entry_good';
 

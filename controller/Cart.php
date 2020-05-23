@@ -20,7 +20,7 @@ class Cart extends CreatePage
         // готовим данные для шаблона шапки сайта
         $header = [
             'tmpl' => 'header.tmpl',
-            'data' => ['name_user' => $_SESSION['user_entry'], 'allquantity' => $cart->quantity],
+            'data' => ['name_user' => $_SESSION['user_entry'],'status_user'=> $cart->status_user, 'allquantity' => $cart->quantity],
         ];
 
         // готовим данные для шаблона контента сайта

@@ -14,8 +14,9 @@ class AboutShop extends CreatePage
         // готовим данные для шаблона шапки сайта
         $header = [
             'tmpl' => 'header.tmpl',
-            'data' => ['name_user' => $_SESSION['user_entry'], 'allquantity' =>  $m_about->quantity],
+            'data' => ['name_user' => $_SESSION['user_entry'], 'status_user'=> $m_about->status_user, 'allquantity' =>  $m_about->quantity],
         ];
+      
 
         // готовим данные для шаблона контента сайта
         $content = [

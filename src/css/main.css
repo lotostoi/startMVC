@@ -2648,13 +2648,15 @@ body {
 }
 
 .writeReview__nameUser:hover, .writeReview__emailUser:hover, .writeReview__phoneUser:hover {
-  -webkit-box-shadow: 0px 0px 5px 2px #ebc117;
-  box-shadow: 0px 0px 5px 2px #ebc117;
+  border-color: #1796eb;
+  -webkit-box-shadow: 0px 0px 5px 2px #1796eb;
+  box-shadow: 0px 0px 5px 2px #1796eb;
 }
 
 .writeReview__nameUser:focus, .writeReview__emailUser:focus, .writeReview__phoneUser:focus {
-  -webkit-box-shadow: 0px 0px 5px 2px #ebc117;
-  box-shadow: 0px 0px 5px 2px #ebc117;
+  border-color: #1796eb;
+  -webkit-box-shadow: 0px 0px 5px 2px #1796eb;
+  box-shadow: 0px 0px 5px 2px #1796eb;
 }
 
 .writeReview__textUser {
@@ -2670,13 +2672,15 @@ body {
 }
 
 .writeReview__textUser:hover {
-  -webkit-box-shadow: 0px 0px 5px 2px #ebc117;
-  box-shadow: 0px 0px 5px 2px #ebc117;
+  border-color: #1796eb;
+  -webkit-box-shadow: 0px 0px 5px 2px #1796eb;
+  box-shadow: 0px 0px 5px 2px #1796eb;
 }
 
 .writeReview__textUser:focus {
-  -webkit-box-shadow: 0px 0px 5px 2px #ebc117;
-  box-shadow: 0px 0px 5px 2px #ebc117;
+  border-color: #1796eb;
+  -webkit-box-shadow: 0px 0px 5px 2px #1796eb;
+  box-shadow: 0px 0px 5px 2px #1796eb;
 }
 
 .writeReview__sendData {

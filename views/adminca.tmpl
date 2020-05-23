@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link href="./src/css/adminca.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="contener">
+        <header class="admin__header">
+            <div class="admin__headerBody">
+                <nav>
+
+                    <a href="index.php?page=adminca&a_page=cotalog">Каталог товров</a>
+
+                    <a href="index.php?page=adminca&a_page=orders"> Заказы </a>
+
+                    <a href="index.php"> Вернуться на сайт </a>
+
+                </nav>
+            </div>
+        </header>
+
+        {{ content|raw }}
+
+    </div>
+
+
+</body>
+
+</html>
