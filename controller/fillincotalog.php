@@ -15,7 +15,7 @@ $memmory = ['8','16','32','64','128'];
 $permitted_chars = 'QWERTYUIOPASDFGHJKLZXCVBNM';
 
 
- for ($i = 0; $i < 100; $i++) {
+ for ($i = 0; $i < 500; $i++) {
 
     $arr = array(
         ':n' => rand(0,9) .".". rand(1,9) .' '. $brand[rand(0,4)] . ' ' .substr(str_shuffle($permitted_chars), 0, 6) . round(rand(10,100),-1)." " . $memmory[rand(0,4)]. ' ГБ' .'  '. $color[rand(0,5)],

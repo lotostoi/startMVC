@@ -14,13 +14,16 @@
                     <nav class="nav">
                
                         <a href="# " class="footer__a">E-SHOP</a>
-                        <ul class="nav__ul">
-                            <li class="nav__li"><a href="#" class="nav__ali" data-id="#">home</a></li>
-                            <li class="nav__li"><a href="#" class="nav__ali" data-id="#">Shop</a></li>
-                            <li class="nav__li"><a href="#" class="nav__ali" data-id="#">Team</a></li>
-                            <li class="nav__li"><a href="#" class="nav__ali" data-id="#">About Us</a></li>
-                            <li class="nav__li"><a href="#" class="nav__ali" data-id="contacts">Contacts</a></li>
-                        </ul>
+                    <ul class="header__ul">
+                        <li class="header__li"><a href="index.php?page=aboutshop" class="header__a">Главная</a></li>
+                        <li class="header__li"><a href="index.php?page=aboutshop/#aboutshope" class="header__a">О нас</a></li>
+                        <li class="header__li"><a href="index.php?page=cotalog" class="header__a">Товары</a></li>
+                        <li class="header__li"><a href="index.php?page=reviews" class="header__a">Отзывы</a></li>
+                        {% if status_user == 'Admin'  %}
+                        <li class="header__li"><a href="index.php?page=adminca" class="header__a">Админка</a></li>
+                        {% endif %}
+                    
+                    </ul>
                         <ul class="nav__socsety">
                             <li class="nav__liIcon"><a href="#" class="nav__aIcon"><i class="icon-twitter nav__icon"></i></a>
                             </li>

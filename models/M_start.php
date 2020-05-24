@@ -93,20 +93,7 @@ class M_start
         }
 
     }
-    // если пользователь не авторизовн присваиваем ему следющй после последнего id в таблице юзеров.
- /*    private function setIDforNoUser()
-    {
-        if (!isset($_SESSION['id_user_entry'])) {
-            $arr_users = $this->db->getArr(USERS);
-            $max_id_user = $arr_users[count($arr_users) - 1]['id'];
-            
-            echo $max_id_user;
 
-            $_SESSION['id_user_entry'] = $max_id_user + 1;
-            
-        }
-
-    } */
     
     private function getQuantity()
     {

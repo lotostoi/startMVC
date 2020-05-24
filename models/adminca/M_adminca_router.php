@@ -8,6 +8,10 @@ class M_adminca_router extends \models\M_start
 
     public $a_page;
 
+    // operetions in cotalog
+
+    public $cotalog_oper;
+
     public function __construct()
     {
         parent::__construct();
@@ -23,6 +27,13 @@ class M_adminca_router extends \models\M_start
         } else {
             $this->a_page = $_GET['a_page'];
         }
+
+        if ($_GET['cotalog_oper'] == '') {
+             $this->cotalog_oper = 'add';
+        }else {
+             $this->cotalog_oper = $_GET['cotalog_oper'];
+        }
+
 
     }
 

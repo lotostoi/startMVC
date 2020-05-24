@@ -114,6 +114,10 @@
   font-style: normal;
 }
 
+body {
+  min-height: calc(100vh + 1px);
+}
+
 .contener {
   width: 100%;
   margin: 0 auto;
@@ -121,6 +125,182 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.contener .admin_modelWindow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  background-color: #10d0f1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contener .admin_modelWindow .contItem {
+  width: 70%;
+  min-height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+  position: relative;
+}
+
+.contener .admin_modelWindow .contItem span.close {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  right: 20px;
+  top: 20px;
+  background-color: rgba(255, 0, 0, 0.459);
+  font-family: "Montserrat regular", "Arial", Sans-serif;
+}
+
+.contener .admin_modelWindow .contItem span.close:hover {
+  cursor: pointer;
+  background-color: brown;
+}
+
+.contener .admin_modelWindow .contItem span.close:active {
+  cursor: pointer;
+  background-color: #fa0909;
+}
+
+.contener .admin_modelWindow .contItem__left {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #aca9a9;
+  margin: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contener .admin_modelWindow .contItem__left > label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fffefe;
+  height: 30px;
+  margin: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+  font-family: "Montserrat regular", "Arial", Sans-serif;
+  line-height: 25px;
+  padding: 5px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.contener .admin_modelWindow .contItem__left > label > span,
+.contener .admin_modelWindow .contItem__left > label > input {
+  width: 400px;
+  margin-left: 20px;
+  border-radius: 2px;
+  font-family: "Montserrat regular", "Arial", Sans-serif;
+  line-height: 25px;
+  padding: 0 10px;
+}
+
+.contener .admin_modelWindow .contItem__left > label > input[type="checkbox"] {
+  margin-right: auto;
+}
+
+.contener .admin_modelWindow .contItem__left > label .messeg_inform {
+  background-color: #68dd82;
+  border-radius: 2px;
+  opacity: 0;
+  text-align: center;
+  -webkit-transition: opacity 900ms;
+  transition: opacity 900ms;
+}
+
+.contener .admin_modelWindow .contItem__left > textarea {
+  padding: 10px;
+  width: 90%;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  min-height: 200px;
+  font-size: 15px;
+}
+
+.contener .admin_modelWindow .contItem__left .contItem__inpDel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 200px;
+  height: 0;
+  min-height: 30px;
+  border-radius: 1px;
+  border: 2px solid #2754eb;
+  font-size: 11px;
+  font-family: "Montserrat regular", "Arial", Sans-serif;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  background-color: #2754eb;
+  outline: none;
+  color: #fff;
+}
+
+.contener .admin_modelWindow .contItem__left .contItem__inpDel:hover {
+  background-color: #263158;
+  border: 2px solid #263158;
+}
+
+.contener .admin_modelWindow .contItem__left .contItem__inpDel:active {
+  background-color: #030c29;
+  border: 2px solid #030c29;
+}
+
+.contener .admin_modelWindow .contItem__right {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .contener > header {
@@ -133,6 +313,7 @@
   background-color: #292828;
   left: 0;
   top: 0;
+  z-index: 200;
 }
 
 .contener .admin__headerBody {
@@ -152,13 +333,18 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  z-index: 200;
 }
 
 .contener nav > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   text-decoration: none;
   margin: 0 20px;
   font-size: 25px;
-  color: #0ac20a;
+  color: #f9faf9;
   font-family: "Montserrat regular", "Arial", Sans-serif;
 }
 
@@ -168,6 +354,10 @@
 
 .contener nav > a:active {
   color: #ff3300;
+}
+
+.contener nav > a:nth-of-type(3) {
+  margin-left: auto;
 }
 
 .admin__cotalog {
@@ -183,7 +373,8 @@
           align-items: center;
   max-width: 1400px;
   width: 100%;
-  margin: 0 auto;
+  min-height: 100vh;
+  margin: 100px auto 0;
   padding: 20px;
   background-color: #e6e3e3;
   -webkit-box-orient: vertical;
@@ -193,7 +384,25 @@
 }
 
 .admin__cotalog .cont__cotalogAdmin nav {
-  margin: 20px;
+  position: fixed;
+  max-width: 1400px;
+  width: 100%;
+  top: 101px;
+  padding: 30px;
+  background-color: #1e1ef1;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.admin__cotalog .cont__cotalogAdmin .admin__goodAdmin:first-of-type {
+  margin-top: 100px;
 }
 
 .admin__cotalog .cont__cotalogAdmin .admin__goodAdmin {
@@ -262,5 +471,135 @@
 .admin__cotalog .cont__cotalogAdmin .admin__goodAdmin > button:active {
   background-color: #030c29;
   border: 2px solid #030c29;
+}
+
+.contItem_add {
+  margin: auto;
+  width: 100%;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+  position: relative;
+}
+
+.contItem__left {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #aca9a9;
+  margin: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contItem__left > label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fffefe;
+  height: 30px;
+  margin: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+  font-family: "Montserrat regular", "Arial", Sans-serif;
+  line-height: 25px;
+  padding: 5px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.contItem__left > label > span,
+.contItem__left > label > input {
+  width: 400px;
+  margin-left: 20px;
+  border-radius: 2px;
+  font-family: "Montserrat regular", "Arial", Sans-serif;
+  line-height: 25px;
+  padding: 0 10px;
+}
+
+.contItem__left > label > input[type="checkbox"] {
+  margin-right: auto;
+}
+
+.contItem__left > label .messeg_inform {
+  background-color: #68dd82;
+  border-radius: 2px;
+  opacity: 0;
+  text-align: center;
+  -webkit-transition: opacity 900ms;
+  transition: opacity 900ms;
+}
+
+.contItem__left > textarea {
+  padding: 10px;
+  width: 90%;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  min-height: 200px;
+  font-size: 15px;
+}
+
+.contItem__left .contItem__inpDel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 200px;
+  height: 0;
+  min-height: 30px;
+  border-radius: 1px;
+  border: 2px solid #2754eb;
+  font-size: 11px;
+  font-family: "Montserrat regular", "Arial", Sans-serif;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  background-color: #2754eb;
+  outline: none;
+  color: #fff;
+}
+
+.contItem__left .contItem__inpDel:hover {
+  background-color: #263158;
+  border: 2px solid #263158;
+}
+
+.contItem__left .contItem__inpDel:active {
+  background-color: #030c29;
+  border: 2px solid #030c29;
+}
+
+.contItem__right {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=adminca.css.map */

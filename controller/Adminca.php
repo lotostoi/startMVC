@@ -5,7 +5,7 @@ class Adminca extends CreatePage
 {
 
     public function __construct()
-    { // создаем объект класса авторизация
+    { 
 
         $m_about = new \models\adminca\M_adminca_router();
 
@@ -17,7 +17,7 @@ class Adminca extends CreatePage
         // готовим данные для шаблона контента сайта
         $content = [
             'tmpl' => 'admin_content.tmpl',
-            'data' => ['a_page'=> $m_about->a_page,'orders' => $ord->getAllOrders(), 'goods' => $goods->goods],
+            'data' => ['a_page'=> $m_about->a_page,'orders' => $ord->getAllOrders(), 'goods' => $goods->goods, 'cotalog_oper'=>$m_about->cotalog_oper],
         ];
        
 

@@ -1,0 +1,27 @@
+<form class='contItem_add' id="addGood" method="POST">
+    <div class='contItem__left'>
+        <input name="id" type="hidden" value="{{data.id}}">
+        <input name="addGood" type="hidden" value="yes">
+        <label class='contItem__label'>Имя продуката:
+            <input type='text' name='name' class='contItem__inp' value='{{data.name}}'>
+        </label>
+        <label class='contItem__label'>Цена продукта:
+            <input type='text' name='price' class='contItem__inp' value='{{data.price}}'>
+        </label>
+        <label class='contItem__label'>Ссылка на изображение:
+            <input type='file' name='link' class='contItem__inp link' value='{{data.linkImg}}'>
+        </label>
+        <textarea name='description' class='contItem__inpText'
+            value='{{data.description}}'> {{data.description}} </textarea>
+        <label class='contItem__lebDell'>
+            <button type='submit' class='contItem__inpDel'> Сохранить изменения </button>
+            <span class='messeg_inform'> Товар успешно добавлен в базу данных </span>
+        </label>
+    </div>
+    <div class='contItem__right' data-contimg='{{data.id}}'>
+        <img src="{{ data.linkImg ?: '' }}" alt='img' class='contItem__img' height='300'>
+    </div>
+</form>
+
+
+<script src="./src/js/addgood.js"></script>

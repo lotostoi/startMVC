@@ -1,8 +1,6 @@
 <?php
 namespace models\server;
 
-
-
 class S_cart_for_auth_user
 {
     public $db;

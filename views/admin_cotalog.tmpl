@@ -1,28 +1,31 @@
 <section class="admin__cotalog">
     <div class="cont__cotalogAdmin">
         <nav>
-            <a href="">Добавть товар</a>
-            <a href="">Редактировать товары</a>
+            <a href="index.php?page=adminca&a_page=cotalog&cotalog_oper=add">Добавить товар</a>
+            <a href="index.php?page=adminca&a_page=cotalog&cotalog_oper=edit">Редактировать тукущий коталог</a>
         </nav>
-        {% for good in goods%}
-        <div class="admin__goodAdmin">
-        
-            <span class="good_id"> id - товара {{good.id}}</span>
-        
-            <img src="{{good.linkImg}}" alt="{{good.name}}">
-        
-            <span class="good_name">{{good.name}}</span>
-        
-            <button data-id-good-admin="{{good.id}}">Редактировть товар</button>
-        
-        </div>
-        {% endfor %}
+        {% if cotalog_oper == 'add' %}
+
+        {% include 'add_good_admin.tmpl'  %}
+
+        {% elseif cotalog_oper == 'edit' %}
 
 
+                {% for good in goods%}
+                <div class="admin__goodAdmin"  data-cont-id="{{good.id}}">
+                
+                    <span class="good_id"> id - товара {{good.id}}</span>
+                
+                    <img src="{{good.linkImg}}" alt="{{good.name}}">
+                
+                    <span class="good_name">{{good.name}}</span>
+                
+                    <button class = "cotalog_admin_button" data-id-good-admin="{{good.id}}">Редактировть товар</button>
+                
+                </div>
+                {% endfor %}
 
+        {% endif %}
     </div>
-
-  
-
-
 </section>
+<script src="./src/js/admin_cotalog.js"></script>
