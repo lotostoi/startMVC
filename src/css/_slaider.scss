@@ -192,9 +192,9 @@
     align-items: center;
     background-color: white;
     margin: 10px 15% 10px auto;
-    & .imgProduct {
+    & > img {
         margin: auto;
-        height: 500px;
+        height: 50vh;
       }
   }
  

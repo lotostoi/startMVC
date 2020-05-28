@@ -4,6 +4,8 @@
 }
 
 @import "fonts";
+@import "adminOrders";
+
 body {
     min-height: calc(100vh + 1px);
 }
@@ -169,7 +171,7 @@ body {
             display: flex;
             text-decoration: none;
             margin: 0 20px;
-            font-size: 25px;
+            font-size: 20px;
             color: rgb(249, 250, 249);
             font-family: $mr;
             &:hover {
@@ -199,12 +201,13 @@ body {
         padding: 20px;
         background-color: rgb(230, 227, 227);
         flex-direction: column;
+        box-sizing: border-box;
         & nav {
             position: fixed;
             max-width: 1400px;
             width: 100%;
             top: 101px;
-            padding: 30px;
+            padding: 10px 30px;
             background-color: rgb(30, 30, 241);
             margin: 0 auto;
             display: flex;
@@ -274,7 +277,7 @@ body {
 .contItem_add {
     margin: auto;
     width: 100%;
-    min-height: 100%;
+    min-height: 70%;
     display: flex;
     background-color: white;
     -webkit-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);

@@ -22,6 +22,7 @@ class Shop extends Good {
     id_user = '';
     button_off = false;
     getCotalog(url, type, data) { // метод для отправки данных на сервер
+        document.querySelector('.contCotalog__preloader').classList.toggle('active')
         return fetch(url, {
             method: type,
             body: data
@@ -32,7 +33,11 @@ class Shop extends Good {
                 this.id_user = data.id_user
                 this.button_off = data.button_off
             })
-            .then(data => this.render(this.cotalog, this.button_off ))
+            .then(data => {
+                this.render(this.cotalog, this.button_off)
+                document.querySelector('.contCotalog__preloader').classList.toggle('active')
+                this.__getLastEl().classList.add('active')
+            })
     }
     render(arrGoods, button_off) {
         let el = document.querySelector('.contCotalog')
@@ -46,13 +51,18 @@ class Shop extends Good {
             el.innerHTML = `<h3> По вашему запросу совпадений не найдено! </h3>`
         } else {
             arrGoods.forEach(e => {
-                console.log(this)
+              
                 if (el) {
                     el.innerHTML += this.renderGood(e.id, e.name, e.linkImg, e.price, e.description)
                 }
             });
         }
 
+    }
+    __getLastEl() {
+        let arr = document.querySelectorAll('.cotalog')
+        console.log(arr[arr.length - 1])
+        return arr[arr.length - 1]
     }
 }
 

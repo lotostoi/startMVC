@@ -1,5 +1,76 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+    background: #f2f1ef;
+}
+
+$animation-duration: 1.8s;
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 10px;
+    background: #3498db;
+    border-radius: 5px;
+    animation: load $animation-duration ease-in-out infinite;
+    &:before,
+    &:after {
+        position: absolute;
+        display: block;
+        content: "";
+        animation: load $animation-duration ease-in-out infinite;
+        height: 10px;
+        border-radius: 5px;
+    }
+    &:before {
+        top: -20px;
+        left: 10px;
+        width: 40px;
+        background: #ef4836;
+    }
+    &:after {
+        bottom: -20px;
+        width: 35px;
+        background: #f5ab35;
+    }
+}
+
+@keyframes load {
+    0% {
+        transform: translateX(40px);
+    }
+
+    50% {
+        transform: translateX(-30px);
+    }
+    100% {
+        transform: translateX(40px);
+    }
+}
+
+.contCotalog__preloader {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: relative;
+}
+
 .cotalog {
-    display: flex;
+    display: none;
     flex: 1 0 auto;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -20,7 +91,6 @@
         background-color: white;
         margin: 5px;
         transition: border-color 200ms;
-       
 
         &:hover {
             border-color: rgb(211, 123, 41);
@@ -89,6 +159,9 @@
         }
     }
 }
+.active {
+    display: flex;
+}
 
 .contCotalog {
     width: 100%;
@@ -101,7 +174,6 @@
         width: 90%;
         font-size: 40px;
         text-align: center;
-
     }
 }
 
@@ -129,6 +201,7 @@
     margin: 20px auto;
     justify-content: center;
     border: none;
+    align-items: center;
     &:hover {
         background-color: rgb(51, 51, 235);
     }
