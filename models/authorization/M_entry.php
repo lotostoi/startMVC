@@ -54,9 +54,7 @@ class M_entry extends \models\M_start
                     $this->name_button = 'exit';
                     $this->body_message = 'entry_good';
                     header('Location: index.php?page=auth/personalarea' );
-
-
-                 
+                
                 } else {
                     $this->name_button = 'entry';
                     $this->body_message = 'wrongLoginOrPassword';
