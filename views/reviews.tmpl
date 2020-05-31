@@ -1,0 +1,32 @@
+
+
+<div class="contMain">
+
+    <form action="#" method="POST" class="writeReview">
+        <h1 class="writeReview__h1"> Пожеления и отзывы </h1>
+        <label for="#" class="writeReview__user"> Ваше имя:
+            <input type="text" name="nameUser" class="writeReview__nameUser">
+        </label>
+        <label for="#" class="writeReview__user"> Вашь e-mail:
+            <input type="email" name="emailUser" class="writeReview__emailUser">
+        </label>
+        <label for="#" class="writeReview__user"> Вашь телефон:
+            <input type="text" name="phoneUser" class="writeReview__phoneUser">
+        </label>
+        <label for="#" class="writeReview__user">
+            <textarea name="textUser" class="writeReview__textUser" cols="30" rows="10"></textarea>
+        </label>
+        <input type="submit" name="sendReview" value="Отправить отзыв" class="writeReview__sendData">
+    </form>
+    <section class="reviews">
+        {% for review in reviews %} 
+         <div class='reviews__review'>
+         <span class='reviews__nameUser'> {{review.nameUser}} </span>
+         <p class='reviews__text'>{{review.text}}</p>
+         <span class='reviews__data'> {{review.data}} </span>
+         </div>
+        {% endfor %} 
+    </section>
+
+</div>
+

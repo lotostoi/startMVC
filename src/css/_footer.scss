@@ -1,0 +1,160 @@
+
+.footer {
+    width: 100%;
+    display: flex;
+    background-color: #222328;
+    padding: 0 115px;
+    box-sizing: border-box;
+    flex-direction: column;
+    &__a {
+        text-decoration: none;
+        color: white;
+        &:hover {
+            color: $colgre;
+        }
+
+        &:active {
+            color: red;
+        }
+    }
+}
+
+@include to(850px) {
+    .footer {
+        padding: 0 20px;
+    }
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 62px 0;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.507);
+    flex-wrap: wrap;
+
+    &__img {
+        transition: transform 100ms;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+
+    &__ul {
+        width: 387px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__ali {
+        display: flex;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        text-decoration: none;
+
+        &:hover {
+            color: $colgre;
+        }
+
+        &:active {
+            color: red;
+        }
+    }
+
+    &__socsety {
+        width: 120px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__icon {
+        color: #fff;
+        font-size: 18px;
+
+        &:hover {
+            color: $colgre;
+        }
+
+        &:active {
+            color: red;
+        }
+    }
+
+    @include to(850px) {
+        &__ul {
+            display: none;
+        }
+    }
+}
+
+.foot {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 62px 0;
+    align-items: center;
+
+    &__p {
+        width: 511px * 100% / $widthBoby;
+        color: #ffffff;
+        font-family: $ctr;
+        font-size: 14px;
+        font-style: italic;
+        line-height: 22px;
+        opacity: 0.3;
+    }
+
+    &__ul {
+        width: 317px * 100% / $widthBoby;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__li {
+        display: flex;
+    }
+
+    &__a {
+        display: flex;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        text-decoration: none;
+
+        &:hover {
+            color: $colgre;
+        }
+
+        &:active {
+            color: red;
+        }
+    }
+
+    @include to(850px) {
+        flex-direction: column;
+
+        &__p {
+            width: 80%;
+            text-align: center;
+        }
+
+        &__ul {
+            width: 80%;
+            text-align: center;
+            margin-top: 20px;
+        }
+    }
+}

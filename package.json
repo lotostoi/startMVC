@@ -1,0 +1,37 @@
+{
+  "name": "startmvc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/polyfill": "^7.10.1",
+    "core-js": "^2.6.11"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.1",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/plugin-transform-classes": "^7.10.1",
+    "@babel/preset-env": "^7.10.1",
+    "@babel/preset-stage-3": "^7.8.3",
+    "babel-preset-minify": "^0.5.1"
+  },
+  "scripts": {
+    "build": "babel src/js_src -d src/js",
+    "watch": "babel src/js_src -d src/js -w"
+   
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lotostoi/startMVC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lotostoi/startMVC/issues"
+  },
+  "homepage": "https://github.com/lotostoi/startMVC#readme"
+}

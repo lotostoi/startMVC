@@ -1,26 +1,17 @@
-<div class="contMain">
+<div class="contPersonalArea">
 
-    <form class="persArea" method="POST">
+    <div class="persArea">
 
-        <h3 class="persArea__h3"> Личный кабинет </h3>
-        <label class="persArea__label">
-            <span class="persArea__title">Логин:</span>
-            <span class="persArea__value"> {{ data.login_pa }} </span>
-        </label>
-        <label class="persArea__label">
-            <span class="persArea__title">Имя:</span>
-            <span class="persArea__value">{{ data.name_pa }}</span>
-        </label>
-        <label class="persArea__label">
-            <span class="persArea__title">E-mail:</span>
-            <span class="persArea__value">{{ data.email_pa }} </span>
-        </label>
-        <label class="persArea__label">
-            <span class="persArea__title">Телефон:</span>
-            <span class="persArea__value">{{ data.phone_pa }} </span>
-        </label>
-        <button type="submit" class="persArea__btnEdit" name="persAreaEdit"> Изменить </button>
+        <h2 class="persArea__h2"> Личный кабинет </h2>
+        <div class="dataandorders">
+            {% if  template  == "show" %}
+            {% include 'showpersonaldata.tmpl' %}
+            {% else %}
+            {% include 'editpersonaldata.tmpl' %}
+            {% endif %}
+            {% include 'orders.tmpl' %}
+        </div>
 
-    </form>
+    </div>
 
 </div>
