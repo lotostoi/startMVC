@@ -1,0 +1,34 @@
+<div class="contMain">
+    <div class="contProduct">
+        <img src="{{data.link}}" alt='img' class='imgProduct'>
+        <h3 class="nameProduct"> {{data.name}} </h3>
+        <span class='priceProduct'> {{data.price}} </span>
+        <p class="textProduct"> {{data.text}} </p>
+        <button class="btnAddToCart" data-id="{{ data.id }}" data-id-user="{{ data.id_user }}"> Добавить в корзину
+        </button>
+    </div>
+
+    <script>
+        document.querySelector('.btnAddToCart').addEventListener('click',  (evt) => {
+            let params = new FormData();
+         
+            let id = evt.target.dataset.id
+            let idUser = evt.target.dataset.idUser || null
+
+            params.append('id_product', id)
+            params.append('id_user', idUser)
+            params.append('oper', 'add')
+            fetch('./controller/serv.php', {
+                method: 'post',
+                body: params
+            })
+                .then(data => data.json())
+                .then((data) => {
+                    if (data.res == "add") {
+                        document.querySelector('.countCart').innerHTML = data.allQuant
+                    }
+
+                })
+        })
+    </script>
+</div>

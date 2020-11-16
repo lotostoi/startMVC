@@ -1,0 +1,17 @@
+
+{% for good_in_cart in goods_in_cart  %}
+<div class="contCartProducts__contItem">
+    <img src="{{ good_in_cart.link }}" width="100" height="150" alt="imgProduct" class="contCartProducts__img">
+    <span class="contCartProducts__name">{{ good_in_cart.name }}</span>
+    <span class="contCartProducts__price" data-price="{{ good_in_cart.price }}"
+        data-priceId="{{good_in_cart.id}}">{{ good_in_cart.price * good_in_cart.amount }}</span>
+    <span class="contCartProducts__quantity" data-quant="{{ good_in_cart.amount }}" data-quantId="{{good_in_cart.id}}">{{ good_in_cart.amount }}
+        шт</span>
+    <div class="contCartProducts__buttons">
+        <button @click="$parent.addItemInCart(prod)" data-userid="{{session_id_user}}" data-id="{{good_in_cart.id}}"
+            class="contCartProducts__add">&#9650</button>
+        <button @click="$parent.delItemInCart(prod)" data-userid="{{session_id_user}}" data-id="{{good_in_cart.id}}"
+            class="contCartProducts__del">&#9660</button>
+    </div>
+</div>
+{% endfor %}

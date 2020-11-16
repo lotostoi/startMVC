@@ -1,17 +1,11 @@
 <?php
-error_reporting(0);
-spl_autoload_register(function ($class_name) {
-    include './controller/' . $class_name . '.php';
-});
+include_once 'models/config/db_config.php';
 
-if (!isset($_GET['page'])) {
-    $_GET['page'] = 'aboutshop';
-}
+// настроен и для моего проекта 
+require_once './vendor/autoload.php';
 
-$page = $_GET['page'];
 
-if ($page == 'aboutshop') {
-    new AboutShop();
-} else if ($page == 'registration' || $page == 'entry' || $page == 'personalarea') {
-    new Auth();
-} 
+new \controller\Router();
+
+
+

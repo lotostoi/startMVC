@@ -1,8 +1,9 @@
 <?php
+namespace controller;
 
-include "./controller/Controller.class.php";
+require_once "Controller.class.php";
 
-class CreatePage extends controller\Controller
+class CreatePage extends Controller
 {
     private $title;
     private $header;
@@ -11,7 +12,9 @@ class CreatePage extends controller\Controller
 
     public function __construct()
     {
+
         $this->getPageName();
+
     }
 
     public function p_shop($title, $header, $content)
@@ -21,15 +24,27 @@ class CreatePage extends controller\Controller
         $this->content = $this->viewTamplate($content['tmpl'], $content['data']);
     }
 
+    public function p_admin($title, $content)
+    {
+        $this->title = $title;
+        $this->content = $this->viewTamplate($content['tmpl'], $content['data']);
+    }
+
     public function render()
     {
         $arrShop = ['title' => $this->title, 'header' => $this->header, 'content' => $this->content];
         echo parent::viewTamplate('main.tmpl', $arrShop);
     }
 
+    public function render_admin()
+    {
+        $arrShop = ['title' => $this->title, 'header' => $this->header, 'content' => $this->content];
+        echo parent::viewTamplate('adminca.tmpl', $arrShop);
+    }
+
     private function getPageName()
     {
         $this->name_page = $_GET['page'] ? $_GET['page'] : 'aboutshop';
-     
+
     }
 }

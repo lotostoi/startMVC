@@ -1,0 +1,12 @@
+<div class='order'>
+    {%  if orderSend == '' %}
+    <form class="makeOrder" method="POST" >
+        <label class="makeOrder__text">Пожелания к заказу: <textarea type="text" name="text_order"> {{text ?: ''}}</textarea></label>
+        <input type="submit" name="makeOrder" value="Сделать заказ" class="makeOrder__btn">
+    </form>
+    {%  else %}
+    <div class='entrance__okText'>
+        <p class='entrance__err'> Вашь заказ принят, мы свяжемся с вами в ближайщее время! </p>
+    </div>
+    {% endif %}
+</div>

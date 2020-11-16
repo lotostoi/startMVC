@@ -1,0 +1,98 @@
+.adminOrders {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+    min-height: 100vh;
+    margin: 100px auto 0;
+    padding: 20px;
+    background-color: rgb(230, 227, 227);
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: $mr;
+    & h3 {
+        font-size: 25px;
+        color: black;
+    }
+}
+.orders__title {
+    display: flex;
+    width: 100%;
+    margin: 20px 0;
+    justify-content: space-around;
+    & > li {
+        width: 300px;
+        list-style-type: none;
+        min-height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(83, 83, 83);
+        color: white;
+    }
+}
+
+.adminOrders__ord {
+    display: flex;
+    width: 100%;
+    margin: 20px 0;
+    justify-content: space-around;
+    & > li {
+        width: 300px;
+        list-style-type: none;
+        min-height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgb(190, 190, 190);
+        background-color: rgb(247, 247, 247);
+        color: rgb(0, 0, 0);
+    }
+
+    & > li:last-of-type {
+        transition: background-color 500ms;
+        background-color: darksalmon;
+        &:hover {
+            background-color: rgb(236, 86, 35);
+            cursor: pointer;
+        }
+    }
+    & .active_li {
+        background-color: rgb(72, 35, 236);
+    }
+}
+
+.show_order {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+    max-height: 2px;
+    overflow: hidden;
+    transition: max-height 900ms;
+    & .good {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        & .img {
+            width: 45px;
+            height: 90px;
+            padding: 5px;
+            & img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+        & .name {
+            width: 300px;
+            text-align: center;
+        }
+    }
+
+}
+
+.show_order-active {
+    max-height: 1000px;
+}

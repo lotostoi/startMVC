@@ -1,5 +1,17 @@
 {
     "require": {
        "twig/twig":"^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+        "controller\\": "controller/", 
+        "models\\": "models/",
+        "models\\cart\\": "models/cart/",
+        "models\\order\\": "models/order/",
+        "models\\server\\": "models/server/",
+        "models\\auth\\": "models/authorization/"
+        
+        
+        }
     }
 }

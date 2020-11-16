@@ -1,0 +1,92 @@
+
+.header {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 0;
+    min-height: 150px;
+    background-color:  #222328;;
+    position: fixed;
+    color: white;
+    box-sizing: border-box;
+    z-index: 500;
+    padding: 20px 40px;
+    flex-wrap: wrap;
+
+    &__h1 {
+        font-size: 35px;
+        //  margin-left: 60px;
+    }
+
+    &__ul {
+        width: auto;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        align-items: center;
+        text-decoration: none;
+        margin-left: 60px;
+    }
+    & > form {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        & .search {
+            width: 50%;
+            height: 30px;
+           // border-radius: 5px;
+            margin-right: 20px;
+            padding: 5px;
+            border: none;
+            outline: none;
+        }
+        & .search__button {
+            width: 100px;
+            display: flex;
+           // min-width: 84px;
+            min-height: 30px;
+           // border-radius: 5px;
+            border: 2px solid #2754eb;
+            font-size: 11px;
+            font-family: $mr;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            background-color: #2754eb;
+            outline: none;
+            color: #fff;
+
+            &:hover {
+                background-color: #7490ec;
+                border: 2px solid #7490ec;
+            }
+
+            &:active {
+                background-color: #030c29;
+                border: 2px solid #030c29;
+            }
+        }
+    }
+
+    &__a {
+        color: white;
+        align-items: center;
+        text-decoration: none;
+        margin: 0 20px 0 auto;
+
+        &:hover {
+            color: $colgre;
+        }
+
+        &:active {
+            color: red;
+        }
+    }
+
+    &__login {
+        width: 100px;
+    }
+}

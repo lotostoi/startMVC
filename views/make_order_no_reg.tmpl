@@ -1,0 +1,22 @@
+<div class='order'>
+    {%  if orderSend == '' %}
+
+    <form class="makeOrder" method="POST">
+        <label class="makeOrder__login">Ваше имя: <input class="{{error.n}}" type="text" name="name_order"
+                value="{{fields.name ?: ''}}"></label>
+        <label class="makeOrder__login ">Телефон: <input class="{{error.p}}" type="text" name="phone_order"
+                value="{{fields.phone ?: ''}}"></label>
+        <label class="makeOrder__login ">E-mail: <input class="{{error.e}}" type="email" name="email_order"
+                value="{{fields.email ?: ''}}"></label>
+        <label class="makeOrder__text">Пожелания к заказу: <textarea type="text"
+                name="text_order"> {{fields.text ?: ''}}</textarea></label>
+        <input type="submit" name="makeOrder" value="Сделать заказ" class="makeOrder__btn">
+
+    </form>
+    {%  else %}
+    <div class='entrance__okText'>
+        <p class='entrance__err'> Вашь заказ принят, мы свяжемся с вами в ближайщее время! </p>
+    </div>
+    {% endif %}
+
+</div>

@@ -1,0 +1,69 @@
+<section class="adminOrders">
+    <h3> История заказов</h3>
+    <ul class="orders__title">
+        <li class="title__data">Дата заказа</li>
+        <li class="title__sum">Сумма заказа</li>
+        <li class="title__status">Статус заказа</li>
+        <li class="title">Посмотреть заказ</li>
+    </ul>
+
+    {% for order in orders %}
+    <ul class="adminOrders__ord">
+        <li class="ord__data">{{order.date}}</li>
+        <li class="ord__sum">$ {{order.allSum}}</li>
+        <li class="ord__status">{{order.status}}</li>
+        <li class="ord__button" data-id="{{order.id}}">Посмотреть заказ</li>
+    </ul>
+    <div class="show_order" data-id="{{order.id}}">
+
+        {% for good in order.goods %}
+        <div class="good">
+            <div class="img"><img src="{{good.linkImg}}" alt="{{good.name}}"></div>
+            <span class="name">{{good.name}}</span>
+            <span class="quant">{{good.quant}} шт </span>
+            <span class="price">$ {{good.price * good.quant}}</span>
+        </div>
+        {% endfor %}
+
+    </div>
+    {% endfor %}
+
+
+</section>
+<script>
+
+    document.querySelector('.adminOrders').addEventListener('click', (evt) => {
+
+        if (evt.target.className == 'ord__button') {
+
+            let fun = function () {
+                let dataid = evt.target.dataset.id
+                let el = document.querySelector(`div[data-id='${dataid}']`)
+                let max_height = el.offsetHeight
+
+                console.log(el.offsetHeight)
+
+                if (el.className == 'show_order') {
+                    el.style.maxHeight = '0'
+                } else {
+                    el.style.maxHeight = `${max_height}px`
+                }
+            }
+
+            function f(fun) {
+                let dataid = evt.target.dataset.id
+                let el = document.querySelector(`div[data-id='${dataid}']`)
+                el.classList.toggle('show_order-active')
+
+                fun()
+            }
+
+            f(fun)
+            
+
+        }
+
+
+    })
+
+</script>
