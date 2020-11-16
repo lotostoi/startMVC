@@ -1,7 +1,5 @@
 <?php
-include_once 'models/PDO.php';
-
-include_once 'models/M_start_authorization.php';
+namespace models;
 
 class M_registration extends M_start_authorization
 {
@@ -42,15 +40,18 @@ class M_registration extends M_start_authorization
 
                 if (!$login) {
                     if (!$email) {
+
                         if ($this->userData['pas_1'] === $this->userData['pas_2']) {
-                            $addUser = $this->query->prepare("INSERT INTO `users`(login,name,password,email,phone,status) VALUES(:l,:n,:p1,:e,:p,:s)");
-                            $addUser->bindParam(':l', $this->userData['login']);
-                            $addUser->bindParam(':n', $this->userData['name']);
-                            $addUser->bindParam(':p1', md5($this->userData['pas_1']));
-                            $addUser->bindParam(':e', $this->userData['email']);
-                            $addUser->bindParam(':p', $this->userData['phone']);
-                            $addUser->bindParam(':s', $this->userData['status']);
-                            $addUser->execute();
+                            $arr =  array(
+                           ':l'=> $this->userData['login'],
+                           ':n'=> $this->userData['name'],
+                           ':p1'=> md5($this->userData['pas_1']),
+                           ':e'=> $this->userData['email'],
+                           ':p'=> $this->userData['phone'],
+                           ':s'=> $this->userData['status'],
+                           );
+
+                            $this->db->insert('INSERT INTO USERS (login,name,password,email,phone,status)VALUES(:l,:n,:p1,:e,:p,:s)', $arr);
 
                             $this->userData = [
                                 'login' => '',

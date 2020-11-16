@@ -1,5 +1,5 @@
 <?php
-include_once 'models/M_start_authorization.php';
+namespace models;
 
 class M_entry extends M_start_authorization
 {
@@ -38,18 +38,18 @@ class M_entry extends M_start_authorization
             $index = $this->db->findIdValInColumn(USERS, $login, 'login');
 
             if ($index) {
-                $pas = $this->db->getArr(USERS)[$index - 1]['password'];
+                $pas =$this->db->getArr(USERS)[$index - 1]['password'];
 
                 if ($pas == $password) {
                     setcookie("login_entry", $_POST['login_entry'], time() + 3600 * 24 * 365);
                     setcookie("password_entry", $password, time() + 3600 * 24 * 365);
                     $_SESSION['user_entry'] = $_POST['login_entry'];
-                    $_SESSION['id_user_entry'] = $this->db->getArr(USERS)[$index - 1]['id'];
-                    $_SESSION['status_user_entry'] = $this->db->getArr(USERS)[$index - 1]['status'];
-                    $_SESSION['login_entry'] = $this->db->getArr(USERS)[$index - 1]['name'];
-                    $_SESSION['name_entry'] = $this->db->getArr(USERS)[$index - 1]['name'];
-                    $_SESSION['email_entry'] = $this->db->getArr(USERS)[$index - 1]['email'];
-                    $_SESSION['phone_entry'] = $this->db->getArr(USERS)[$index - 1]['phone'];
+                    $_SESSION['id_user_entry'] =$this->db->getArr(USERS)[$index - 1]['id'];
+                    $_SESSION['status_user_entry'] =$this->db->getArr(USERS)[$index - 1]['status'];
+                    $_SESSION['login_entry'] =$this->db->getArr(USERS)[$index - 1]['name'];
+                    $_SESSION['name_entry'] =$this->db->getArr(USERS)[$index - 1]['name'];
+                    $_SESSION['email_entry'] =$this->db->getArr(USERS)[$index - 1]['email'];
+                    $_SESSION['phone_entry'] =$this->db->getArr(USERS)[$index - 1]['phone']; 
                     $this->name_button = 'exit';
                     $this->body_message = 'entry_good';
 

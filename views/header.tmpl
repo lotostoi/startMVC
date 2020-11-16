@@ -2,8 +2,8 @@
             <h1 class="header__h1"><a href="index.php?page=aboutshop" class="header__a">E-SHOP </a></h1>
             <ul class="header__ul">
                 <li class="header__li"><a href="index.php?page=aboutshop" class="header__a">Главная</a></li>
-               <!--  <li class="header__li"><a href="index.php?page=products" class="header__a">Товары</a></li>
-                <li class="header__li"><a href="index.php?page=reviews" class="header__a">Отзывы</a></li> -->
+                <li class="header__li"><a href="index.php?page=cotalog" class="header__a">Товары</a></li>
+              <!--   <li class="header__li"><a href="index.php?page=reviews" class="header__a">Отзывы</a></li>  -->
          <!--        <?php
                 if ($_SESSION['status_user'] == 'Admin') {
                 
@@ -23,13 +23,13 @@
             <div>
                 {% if name_user  %}
                     <form class="contEntrense" method="POST">
-                        <a href="index.php?page=personalarea" class="contEntrense__login"> {{ name_user }} </a>
+                        <a href="index.php?page=auth/personalarea" class="contEntrense__login"> {{ name_user }} </a>
                         <button type="submit" name="exit" class="contEntrense__action"> выход </button>
                     </form>
                {% else %}
                     <div class="contEntrense">
-                        <a href="index.php?page=registration" class="contEntrense__login"> регистрация</a>
-                        <a href="index.php?page=entry" class="contEntrense__action"> войти </a>
+                        <a href="index.php?page=auth/registration" class="contEntrense__login"> регистрация</a>
+                        <a href="index.php?page=auth/entry" class="contEntrense__action"> войти </a>
                     </div>
                {% endif %}
             </div>

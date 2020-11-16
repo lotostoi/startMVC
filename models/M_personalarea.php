@@ -1,5 +1,5 @@
 <?php
-include_once 'models/M_start_authorization.php';
+namespace models;
 
 class M_personalarea extends M_start_authorization
 {
